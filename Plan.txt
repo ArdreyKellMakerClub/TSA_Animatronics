@@ -3,3 +3,11 @@ Bat to demonstrate echolocation and flight
     Interactive ultrasonic sensor
   Flight
     Flapping wings
+  Teeth
+    pneumatic/hydraulic jaw
+
+Interface
+  Talk to a bat; google home API w/ IoT stuff?
+    constantly face person through webcam
+    moving jaw/head/body
+  old laptop screen
