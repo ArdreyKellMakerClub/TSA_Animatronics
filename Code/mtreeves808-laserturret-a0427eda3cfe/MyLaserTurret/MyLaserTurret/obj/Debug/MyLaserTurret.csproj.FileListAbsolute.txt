@@ -1,0 +1,9 @@
+c:\users\michael\documents\visual studio 2017\Projects\MyLaserTurret\MyLaserTurret\bin\Debug\MyLaserTurret.exe.config
+c:\users\michael\documents\visual studio 2017\Projects\MyLaserTurret\MyLaserTurret\bin\Debug\MyLaserTurret.exe
+c:\users\michael\documents\visual studio 2017\Projects\MyLaserTurret\MyLaserTurret\bin\Debug\MyLaserTurret.pdb
+c:\users\michael\documents\visual studio 2017\Projects\MyLaserTurret\MyLaserTurret\obj\Debug\MyLaserTurret.csprojResolveAssemblyReference.cache
+c:\users\michael\documents\visual studio 2017\Projects\MyLaserTurret\MyLaserTurret\obj\Debug\MyLaserTurret.Properties.Resources.resources
+c:\users\michael\documents\visual studio 2017\Projects\MyLaserTurret\MyLaserTurret\obj\Debug\MyLaserTurret.csproj.GenerateResource.Cache
+c:\users\michael\documents\visual studio 2017\Projects\MyLaserTurret\MyLaserTurret\obj\Debug\MyLaserTurret.exe
+c:\users\michael\documents\visual studio 2017\Projects\MyLaserTurret\MyLaserTurret\obj\Debug\MyLaserTurret.pdb
+c:\users\michael\documents\visual studio 2017\Projects\MyLaserTurret\MyLaserTurret\obj\Debug\MyLaserTurret.Form1.resources
