@@ -9,7 +9,7 @@ LiquidCrystal lcd(7, 8, 9, 10, 11, 12);
 
 void setup() {
   lcd.begin(16, 2);               //set up LCD with proper dimensions
-  lcd.print("Distance: ");        //
+  lcd.print("Distance: ");        //print first line
 }
 
 void loop() {
