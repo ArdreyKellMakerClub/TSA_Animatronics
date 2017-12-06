@@ -8,19 +8,17 @@ long a;
 LiquidCrystal lcd(7, 8, 9, 10, 11, 12);
 
 void setup() {
-  // set up the LCD's number of columns and rows:
-  lcd.begin(16, 2);
-  // Print a message to the LCD.
-  lcd.print("Distance: ");
+  lcd.begin(16, 2);               //set up LCD with proper dimensions
+  lcd.print("Distance: ");        //
 }
 
 void loop() {
-  a=sr04.Distance();
-  lcd.setCursor(0, 1);
-  lcd.print("                ");
-  lcd.setCursor(0, 1);
-  lcd.print(a);
-  lcd.print(" cm");
-  delay(250);
+  a=sr04.Distance();              //get distance
+  lcd.setCursor(0, 1);            //set cursor back to home
+  lcd.print("                ");  //  and then do a ghetto screen refresh
+  lcd.setCursor(0, 1);            //set cursor back to home
+  lcd.print(a);                   //  and print out distance
+  lcd.print(" cm");               //  and print units
+  delay(250);                     //refresh rate
 }
 
