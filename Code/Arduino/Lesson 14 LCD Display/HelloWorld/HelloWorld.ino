@@ -1,7 +1,8 @@
 #include "SR04.h"
-#include <LiquidCrystal.h>
+#include "LiquidCrystal.h"
 #define TRIG_PIN 3
 #define ECHO_PIN 4
+
 SR04 sr04 = SR04(ECHO_PIN,TRIG_PIN);
 long a;
 LiquidCrystal lcd(7, 8, 9, 10, 11, 12);
