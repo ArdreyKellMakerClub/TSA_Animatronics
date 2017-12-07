@@ -3,6 +3,7 @@
 >NOTE: requires elegoo libraries to be in the sketchbook/libraries directory to compile in ArduinoIDE. Arduino in VSCode is broken in ElementaryOS. Don't even try.
 
 Libraries being used:
+
 (SDL2.0)[https://www.libsdl.org/download-2.0.php]
 >(Setup)[http://lazyfoo.net/tutorials/SDL/index.php]
 
