@@ -1,5 +1,6 @@
 #include <SDL2/SDL.h>
 #include <stdio.h>
+#include <SerialPort.h>
 #include <SerialStream.h>
 
 using namespace std;
@@ -7,9 +8,11 @@ using namespace LibSerial;
 
 #define PORT "/dev/whatever" //change in rpi
 
-SerialStream rpi;
+SerialPort   rpi_port;
+SerialStream rpi_stream;
 
 void SerialSetup();
+
 
 int main(){
     SerialSetup();
@@ -18,7 +21,6 @@ int main(){
 }
 
 void SerialSetup(){
-    rpi.Open(PORT);
-    rpi.SetBaudRate(SerialStreamBuf::BAUD_9600);
-    rpi.SetCharSize
+    rpi_port.Open(PORT);
+    rpi_stream.Open(PORT);
 }
