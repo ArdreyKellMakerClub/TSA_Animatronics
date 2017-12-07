@@ -18,6 +18,7 @@ void loop() {
   lcd.print("                ");  //  and then do a ghetto screen refresh
   lcd.setCursor(0, 1);            //set cursor back to home
   lcd.print(a);                   //  and print out distance
+  Serial.println(a);              //  and send to serials
   lcd.print(" cm");               //  and print units
   delay(250);                     //refresh rate
 }
