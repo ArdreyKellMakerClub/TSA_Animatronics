@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <SerialPort.h>
 #include <SerialStream.h>
+#define STREAM "/dev/whatever"
 #define PORT "/dev/whatever" //change in rpi
 
 using namespace std;
