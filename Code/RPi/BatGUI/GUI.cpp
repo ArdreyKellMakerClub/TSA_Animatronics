@@ -2,13 +2,11 @@
 #include <stdio.h>
 #include <SerialPort.h>
 #include <SerialStream.h>
+#define PORT "/dev/whatever" //change in rpi
 
 using namespace std;
 using namespace LibSerial;
 
-#define PORT "/dev/whatever" //change in rpi
-
-SerialPort   rpi_port;
 SerialStream rpi_stream;
 
 void SerialSetup();
@@ -21,6 +19,10 @@ int main(){
 }
 
 void SerialSetup(){
-    rpi_port.Open(PORT);
     rpi_stream.Open(PORT);
+    rpi_stream.BaudRate( SerialStreamBuf::BAUD_9600 );    //arduino BAUD rate
+    rpi_stream.SetNumOfStopBits(1);                     //arduino stop bits
+
+
+
 }

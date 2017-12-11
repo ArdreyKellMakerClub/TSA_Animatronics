@@ -1,5 +1,0 @@
-# depslib dependency file v1.0
-1512681983 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/SDL_Test/01_hello_SDL.cpp
-	<SDL2/SDL.h>
-	<stdio.h>
-
