@@ -3,8 +3,8 @@
 #include <SerialPort.h>
 #include <SerialStream.h>
 #include <SerialStreamBuf.h>>
-#define STREAM "/dev/whatever"
-#define PORT "/dev/whatever" //change in rpi
+#define STREAM "/dev/ttyS0"
+#define PORT "/dev/ttyUSB0" //change in rpi
 
 using namespace std;
 using namespace LibSerial;
@@ -22,7 +22,7 @@ int main(){
 
 void SerialSetup(){
     rpi_stream.Open(PORT);
-    rpi_stream.BaudRate( SerialStreamBuf::BAUD_9600 );    //arduino BAUD rate
+    rpi_stream.SetBaudRate( SerialStreamBuf::BAUD_9600 );    //arduino BAUD rate
     rpi_stream.SetNumOfStopBits(1);                       //arduino stop bits
 
 
