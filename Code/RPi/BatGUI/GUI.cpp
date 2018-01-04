@@ -29,5 +29,6 @@ int main(){
         cout << dist << endl;
         something++;
     }
+
     return 0;
 }
