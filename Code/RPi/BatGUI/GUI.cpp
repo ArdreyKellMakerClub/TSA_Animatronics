@@ -2,29 +2,24 @@
 #include <stdio.h>
 #include <SerialPort.h>
 #include <SerialStream.h>
-#include <SerialStreamBuf.h>>
+#include <SerialStreamBuf.h>
+#include <iostream>
+#include <unistd.h>
+#include <cstdlib>
+
 #define STREAM "/dev/ttyS0"
 #define PORT "/dev/ttyUSB0" //change in rpi
 
 using namespace std;
 using namespace LibSerial;
 
-SerialStream rpi_stream;
-
-void SerialSetup();
 
 
 int main(){
-    SerialSetup();
+    SerialStream rpi_stream;
+    rpi_stream.Open( PORT );
+    rpi_stream.SetBaudRate( SerialStreamBuf::BAUD_9600 );   //arduino BAUD rate
+    rpi_stream.SetNumOfStopBits(1);                         //arduino stop bits
 
     return 0;
-}
-
-void SerialSetup(){
-    rpi_stream.Open(PORT);
-    rpi_stream.SetBaudRate( SerialStreamBuf::BAUD_9600 );    //arduino BAUD rate
-    rpi_stream.SetNumOfStopBits(1);                       //arduino stop bits
-
-
-
 }
