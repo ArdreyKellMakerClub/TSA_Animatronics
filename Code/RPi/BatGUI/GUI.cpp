@@ -12,23 +12,19 @@
 using namespace std;
 using namespace LibSerial;
 
-int something = 0;
-int dist;
-
-
+void setup(string, string);
+void heartbeat();
 
 int main(){
-    SerialStream rpi_stream;
-    rpi_stream.Open( STREAM );
-    rpi_stream.SetBaudRate( SerialStreamBuf::BAUD_9600 );   //arduino BAUD rate
-    rpi_stream.SetNumOfStopBits(1);                         //arduino stop bits
-
-    while(something<1000){
-        rpi_stream <<  'r';
-        rpi_stream >> dist;
-        cout << dist << endl;
-        something++;
-    }
+    setup(PORT, STREAM);
+    heartbeat();
 
     return 0;
+}
+
+void setup(string port, string stream){
+    SerialStream rpi_stream;
+    rpi_stream.Open( stream );
+    rpi_stream.SetBaudRate( SerialStreamBuf::BAUD_9600 );   //arduino BAUD rate
+    rpi_stream.SetNumOfStopBits(1);                         //arduino stop b
 }
