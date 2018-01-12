@@ -1,12 +1,8 @@
-int s;
-
 void setup(){
- Serial.begin(9600); 
+ Serial.begin(9600);
 }
 
 void loop(){
-    if(Serial.available() > 0){
-      s = Serial.read();
-      Serial.println(s, HEX); 
-    }
+   if (Serial.available() > 0) 
+     Serial.print( Serial.read() );
 }

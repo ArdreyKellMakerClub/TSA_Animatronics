@@ -12,11 +12,13 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-g" />
 				</Compiler>
 				<Linker>
 					<Add option="-lserial" />
 					<Add option="-lpthread" />
+					<Add option="-lSDL2" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -41,7 +43,12 @@
 			<Add option="-lpthread" />
 		</Linker>
 		<Unit filename="GUI.cpp" />
+		<Unit filename="displaygui.h" />
 		<Unit filename="heartbeat.cpp" />
+		<Unit filename="heartbeat.h" />
+		<Unit filename="initdisplay.cpp" />
+		<Unit filename="streamsetup.cpp" />
+		<Unit filename="streamsetup.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

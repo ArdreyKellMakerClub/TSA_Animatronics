@@ -9,8 +9,6 @@
 using namespace std;
 using namespace LibSerial;
 
-
-
 int heartbeat(SerialStream&);
 
 #endif // HEARTBEAT_H_INCLUDED
