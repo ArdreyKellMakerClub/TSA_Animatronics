@@ -1,5 +1,5 @@
-#include <SDL2/SDL.h>
-#include <iostream>
+#include "displaygui.h"
+
 using namespace std;
 
 int display(){
