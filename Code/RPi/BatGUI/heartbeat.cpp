@@ -10,6 +10,7 @@ int heartbeat(SerialStream& stream){
         stream << thing1 << endl;
         stream >> thing2;
         cout << thing2 << endl;
+        something++;
     }
 
     return 0;
