@@ -1,16 +1,19 @@
 # depslib dependency file v1.0
-1515430100 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/GUI.cpp
+1515704160 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/GUI.cpp
 	<SDL2/SDL.h>
 	<stdio.h>
 	<SerialStream.h>
 	<SerialStreamBuf.h>
 	<iostream>
-	<unistd.h>
-	<cstdlib>
+	<SDL2/SDL.h>
 
-1515430122 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/heartbeat.cpp
+1515704037 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/heartbeat.cpp
 	<stdio.h>
 	<SerialStream.h>
 	<SerialStreamBuf.h>
+	<iostream>
+
+1515703831 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui.cpp
+	<SDL2/SDL.h>
 	<iostream>
 
