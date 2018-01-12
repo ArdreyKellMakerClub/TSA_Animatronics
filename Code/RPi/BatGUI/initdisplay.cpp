@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int display(){
+int initdisplay(){
     if (SDL_Init(SDL_INIT_VIDEO) != 0){
         cout<<"SDL_Init Error: "<<SDL_GetError()<<endl;
         return 1;

@@ -14,8 +14,10 @@ SerialStream rpi_stream;
 
 int main(){
     setup(STREAM , rpi_stream);
-    //display();
+    //initdisplay();
     heartbeat(rpi_stream);
+
+    rpi_stream.Close();
     return 0;
 }
 
