@@ -4,10 +4,13 @@
 #include <SerialStream.h>
 #include <SerialStreamBuf.h>
 #include <iostream>
-#include <sstream>
+#include <chrono>
+#include <thread>
 
-using namespace std;
 using namespace LibSerial;
+using namespace std;
+using namespace std::chrono;
+using namespace std::this_thread;
 
 int heartbeat(SerialStream&);
 

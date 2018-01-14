@@ -1,23 +1,23 @@
 # depslib dependency file v1.0
-1515966073 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/GUI.cpp
+1515972327 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/GUI.cpp
 	<SDL2/SDL.h>
 	<iostream>
 	"heartbeat.h"
 	"streamsetup.h"
-	"displaygui.h"
 
-1515794298 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/heartbeat.cpp
+1515968145 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/heartbeat.cpp
 	"heartbeat.h"
 
 1515788394 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui.cpp
 	<SDL2/SDL.h>
 	<iostream>
 
-1515794259 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/heartbeat.h
+1515967776 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/heartbeat.h
 	<SerialStream.h>
 	<SerialStreamBuf.h>
 	<iostream>
-	<sstream>
+	<chrono>
+	<thread>
 
 1515790030 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/streamsetup.h
 	<SerialStream.h>
@@ -26,10 +26,16 @@
 1515792728 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/streamsetup.cpp
 	"streamsetup.h"
 
-1515966122 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/initdisplay.cpp
+1515970968 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/initdisplay.cpp
 	"displaygui.h"
 
-1515791025 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui.h
+1515971508 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui.h
 	<SDL2/SDL.h>
 	<iostream>
+
+1515970748 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/closedisplay.cpp
+	"displaygui.h"
+
+1515969100 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/loadmedia.cpp
+	"displaygui.h"
 

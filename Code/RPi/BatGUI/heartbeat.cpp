@@ -1,17 +1,18 @@
 #include "heartbeat.h"
 
-int something = 0;
-string thing1;
-string thing2;
+bool connected;
+int status=1;
 
 int heartbeat(SerialStream& stream){
-    while(something < 5){
-        cin >> thing1;
-        stream << thing1 << endl;
-        stream >> thing2;
-        cout << thing2 << endl;
-        something++;
+    for(int i = 0; i<5; i++){
+        stream<<1;
+        stream>>status;
+        if(status==0)
+            connected = true;
+        sleep_for(milliseconds(500));
     }
 
+    if(!connected)
+        return 1; //not connected
     return 0;
 }

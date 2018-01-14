@@ -2,7 +2,7 @@
 
 using namespace std;
 
-char n;
+/*char n;
 
 int initdisplay(){
     if (SDL_Init(SDL_INIT_VIDEO) != 0){
@@ -10,7 +10,7 @@ int initdisplay(){
         return 1;
     }
 
-    SDL_Window *win = SDL_CreateWindow("Hello World!", 100, 100, 640, 480, SDL_WINDOW_SHOWN);
+    SDL_Window*win = SDL_CreateWindow("Hello World!", 100, 100, 480, 297, SDL_WINDOW_SHOWN);
     if (win == nullptr){
         cout<<"SDL_CreateWindow Error: "<<SDL_GetError()<<endl;
         SDL_Quit();
@@ -35,8 +35,26 @@ int initdisplay(){
         return 3;
     }
 
+    SDL_Texture *tex = SDL_CreateTextureFromSurface(ren, bmp);
+    SDL_FreeSurface(bmp);
+    if (tex == nullptr){
+        SDL_DestroyRenderer(ren);
+        SDL_DestroyWindow(win);
+        cout << "SDL_CreateTextureFromSurface Error: "<<SDL_GetError()<<endl;
+        SDL_Quit();
+        return 4;
+    }
+
+    SDL_RenderCopy(ren, tex, NULL, NULL);
+    SDL_RenderPresent(ren);
+
     while(n != 'n'){cin>>n;}
 
+    SDL_DestroyTexture(tex);
+    SDL_DestroyRenderer(ren);
+    SDL_DestroyWindow(win);
     SDL_Quit();
+
     return 0;
 }
+*/
