@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1515792377 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/GUI.cpp
+1515966073 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/GUI.cpp
 	<SDL2/SDL.h>
 	<iostream>
-	<SDL2/SDL.h>
 	"heartbeat.h"
 	"streamsetup.h"
+	"displaygui.h"
 
 1515794298 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/heartbeat.cpp
 	"heartbeat.h"
@@ -26,7 +26,7 @@
 1515792728 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/streamsetup.cpp
 	"streamsetup.h"
 
-1515790577 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/initdisplay.cpp
+1515966122 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/initdisplay.cpp
 	"displaygui.h"
 
 1515791025 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui.h

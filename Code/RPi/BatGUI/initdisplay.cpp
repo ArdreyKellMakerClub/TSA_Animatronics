@@ -2,6 +2,8 @@
 
 using namespace std;
 
+char n;
+
 int initdisplay(){
     if (SDL_Init(SDL_INIT_VIDEO) != 0){
         cout<<"SDL_Init Error: "<<SDL_GetError()<<endl;
@@ -22,6 +24,18 @@ int initdisplay(){
         SDL_Quit();
         return 2;
     }
+
+    string imagePath = "images/output.bmp";
+    SDL_Surface *bmp = SDL_LoadBMP(imagePath.c_str());
+    if (bmp == nullptr){
+        SDL_DestroyRenderer(ren);
+        SDL_DestroyWindow(win);
+        cout<<"SDL_LoadBMP Error: "<<SDL_GetError()<<endl;
+        SDL_Quit();
+        return 3;
+    }
+
+    while(n != 'n'){cin>>n;}
 
     SDL_Quit();
     return 0;
