@@ -15,4 +15,3 @@ void closedisplay(SDL_Surface*&, SDL_Window*&);
 
 
 #endif // DISPLAYGUI_H_INCLUDED
-//
