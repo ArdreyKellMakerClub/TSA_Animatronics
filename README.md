@@ -5,7 +5,7 @@ NOTE: VSCode doesn't work.
 
 [SDL2.0](https://www.libsdl.org/download-2.0.php)
 >[Setup](http://lazyfoo.net/tutorials/SDL/index.php)
-[SDL2-images](http://www.libsdl.org/projects/SDL_image/)
+[SDL_image 2.0](http://www.libsdl.org/projects/SDL_image/), [SDL_mixer 2.0](https://www.libsdl.org/projects/SDL_mixer/), [SDL_ttf 3.0](https://www.libsdl.org/projects/SDL_ttf/)
 >[Setup](http://lazyfoo.net/tutorials/SDL/06_extension_libraries_and_loading_other_image_formats/index.php)
 
 
