@@ -30,8 +30,9 @@
 1515975296 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/initdisplay.cpp
 	"displaygui.h"
 
-1515977753 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui.h
+1516034692 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui.h
 	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
 	<iostream>
 
 1515975296 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/closedisplay.cpp
