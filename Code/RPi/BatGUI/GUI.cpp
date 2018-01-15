@@ -12,7 +12,6 @@ using namespace LibSerial;
 
 SerialStream rpi_stream;
 
-
 char n;
 
 SDL_Window* win = NULL;
@@ -26,8 +25,8 @@ int main(){
     cout<<"init status: "<<initdisplay(win, scr)<<endl;
     cout<<"load status: "<<loadmedia(win, img, "images/output.bmp")<<endl;
 
-    SDL_BlitSurface(img, NULL, scr, NULL );
-    SDL_UpdateWindowSurface(win);
+    cout<<"blit status: "<<SDL_BlitSurface(img, NULL, scr, NULL )<<SDL_GetError()<<endl;
+    cout<<"updt status: "<<SDL_UpdateWindowSurface(win)<<SDL_GetError()<<endl;
 
     cout<<"Type \'n\' to quit"<<endl;
 
