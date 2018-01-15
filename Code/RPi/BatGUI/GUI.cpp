@@ -25,13 +25,21 @@ int main(){
     cout<<"init status: "<<initdisplay(win, scr)<<endl;
     cout<<"load status: "<<loadmedia(win, img, "images/output.bmp")<<endl;
 
-    cout<<"blit status: "<<SDL_BlitSurface(img, NULL, scr, NULL )<<SDL_GetError()<<endl;
-    cout<<"updt status: "<<SDL_UpdateWindowSurface(win)<<SDL_GetError()<<endl;
+    SDL_BlitSurface(img, NULL, scr, NULL );
+    SDL_UpdateWindowSurface(win);
 
-    cout<<"Type \'n\' to quit"<<endl;
+    bool quit = false;
+    SDL_Event e;
 
-    while(n != 'n'){cin>>n;}
+    while(!quit){
+        while(SDL_PollEvent(&e) !=0){
+            if (e.type == SDL_QUIT)
+                quit = true;
+            SDL_BlitSurface(img, NULL, scr, NULL );
+            SDL_UpdateWindowSurface(win);
 
+        }
+    }
     closedisplay(img, win);
     //rpi_stream.Close();
 
