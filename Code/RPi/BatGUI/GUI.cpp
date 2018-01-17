@@ -2,9 +2,10 @@
 #include <SDL2/SDL_image.h>
 #include <iostream>
 
-#include "heartbeat.h"
-#include "streamsetup.h"
+#include "arduinoserial.h"
 #include "displaygui.h"
+
+#define nl "\n"
 
 #define STREAM "/dev/ttyACM0" //change in rpi
 
@@ -21,10 +22,10 @@ SDL_Renderer* ren = NULL;
 SDL_Texture* tex = NULL;
 
 int main(){
-    //setup(STREAM , rpi_stream);
-    //heartbeat(rpi_stream); //check connection
-    cout<<"init status: "<<initdisplay(win, scr)<<endl;
-    cout<<"load status: "<<loadmedia(win, img, "images/output.bmp")<<endl;
+    //StreamSetup(STREAM , rpi_stream);
+    //Heartbeat(rpi_stream); //check connection
+    cout<<"init status: "<<InitDisplay(win, scr)<<nl;
+    cout<<"load status: "<<LoadMedia(win, img, "images/output.bmp")<<nl;
 
     SDL_BlitSurface(img, NULL, scr, NULL );
     SDL_UpdateWindowSurface(win);
@@ -41,7 +42,7 @@ int main(){
 
         }
     }
-    closedisplay(img, win);
+    CloseDisplay(img, win);
     //rpi_stream.Close();
 
     return 0;

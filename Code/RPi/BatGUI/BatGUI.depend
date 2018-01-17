@@ -1,14 +1,13 @@
 # depslib dependency file v1.0
-1516034836 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/GUI.cpp
+1516154613 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/GUI.cpp
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<iostream>
-	"heartbeat.h"
-	"streamsetup.h"
+	"arduinoserial.h"
 	"displaygui.h"
 
-1516034845 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/heartbeat.cpp
-	"heartbeat.h"
+1516125734 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/heartbeat.cpp
+	"arduinoserial.h"
 
 1515788394 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui.cpp
 	<SDL2/SDL.h>
@@ -25,20 +24,45 @@
 	<SerialStream.h>
 	<SerialStreamBuf.h>
 
-1515973553 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/streamsetup.cpp
-	"streamsetup.h"
+1516125734 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/streamsetup.cpp
+	"arduinoserial.h"
 
 1515975296 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/initdisplay.cpp
 	"displaygui.h"
 
-1516034692 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui.h
+1516211948 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<iostream>
 
-1515975296 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/closedisplay.cpp
+1516147123 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/closedisplay.cpp
 	"displaygui.h"
 
 1515975296 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/loadmedia.cpp
 	"displaygui.h"
+
+1516211948 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/arduinoserial.h
+	<SerialStream.h>
+	<SerialStreamBuf.h>
+	<iostream>
+
+1516147123 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/CloseDisplay.cpp
+	"displaygui.h"
+
+1516147123 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/InitDisplay.cpp
+	"displaygui.h"
+
+1516147123 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/LoadMedia.cpp
+	"displaygui.h"
+
+1516147123 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/StreamSetup.cpp
+	"arduinoserial.h"
+
+1516151517 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/Heartbeat.cpp
+	<chrono>
+	<thread>
+	"arduinoserial.h"
+
+1516153139 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/TrigPoll.cpp
+	"arduinoserial.h"
 
