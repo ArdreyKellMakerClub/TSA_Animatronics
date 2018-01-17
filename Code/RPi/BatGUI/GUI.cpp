@@ -2,8 +2,8 @@
 #include <SDL2/SDL_image.h>
 #include <iostream>
 
-#include "arduinoserial.h"
-#include "displaygui.h"
+#include "arduinoserial/arduinoserial.h"
+#include "displaygui/displaygui.h"
 
 #define nl "\n"
 
@@ -39,9 +39,9 @@ int main(){
                 quit = true;
             SDL_BlitSurface(img, NULL, scr, NULL );
             SDL_UpdateWindowSurface(win);
-
         }
     }
+
     CloseDisplay(img, win);
     //rpi_stream.Close();
 
