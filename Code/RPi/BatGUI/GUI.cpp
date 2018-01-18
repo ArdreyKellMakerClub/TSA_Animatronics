@@ -25,7 +25,7 @@ int main(){
     //StreamSetup(STREAM , rpi_stream);
     //Heartbeat(rpi_stream); //check connection
     cout<<"init status: "<<InitDisplay(win, scr)<<nl;
-    cout<<"load status: "<<LoadMedia(win, img, "images/output.bmp")<<nl;
+    cout<<"load status: "<<LoadMedia(win, img, "images/background_placeholder.bmp")<<nl;
 
     SDL_BlitSurface(img, NULL, scr, NULL );
     SDL_UpdateWindowSurface(win);
