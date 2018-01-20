@@ -22,8 +22,10 @@ SDL_Surface* scr, *img = NULL;
 //SDL_Texture* tex = NULL;
 
 int main(){
-    //StreamSetup(STREAM , rpi_stream);
-    //Heartbeat(rpi_stream); //check connection
+    StreamSetup(STREAM , rpi_stream);
+    cout<<"are we connected?"<<nl;
+    cout<<"connection status: "<<Heartbeat(rpi_stream)<<endl; //check connection
+
     cout<<"init status: "<<InitDisplay(win, scr)<<nl;
     cout<<"load status: "<<LoadMedia(img, scr, "images/background_placeholder.png", 1)<<nl;
 

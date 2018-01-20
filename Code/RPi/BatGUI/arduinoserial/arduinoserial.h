@@ -4,10 +4,12 @@
 #include <SerialStream.h>
 #include <SerialStreamBuf.h>
 #include <iostream>
+#define nl "\n"
+
+const int BUFFER_SIZE = 256 ;
 
 using namespace LibSerial;
 using namespace std;
-
 
 
 int     StreamSetup (string, SerialStream&);
