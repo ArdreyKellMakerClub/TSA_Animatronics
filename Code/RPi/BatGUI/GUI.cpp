@@ -18,14 +18,14 @@ char n;
 
 SDL_Window* win = NULL;
 SDL_Surface* scr, *img = NULL;
-SDL_Renderer* ren = NULL;
-SDL_Texture* tex = NULL;
+//SDL_Renderer* ren = NULL;
+//SDL_Texture* tex = NULL;
 
 int main(){
     //StreamSetup(STREAM , rpi_stream);
     //Heartbeat(rpi_stream); //check connection
     cout<<"init status: "<<InitDisplay(win, scr)<<nl;
-    cout<<"load status: "<<LoadMedia(win, img, "images/background_placeholder.bmp")<<nl;
+    cout<<"load status: "<<LoadMedia(img, scr, "images/background_placeholder.png", 1)<<nl;
 
     SDL_BlitSurface(img, NULL, scr, NULL );
     SDL_UpdateWindowSurface(win);
@@ -42,7 +42,7 @@ int main(){
         }
     }
 
-    CloseDisplay(img, win);
+    CloseDisplay(scr, win);
     //rpi_stream.Close();
 
     return 0;
