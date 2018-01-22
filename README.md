@@ -19,4 +19,5 @@
 >Download Super Starter Kit, unzip libraries
 
 ## Model:
-Download the core_parts file and unzip it into inventor, where you will be able to use all parts in the folder.
+[Model Parts](https://drive.google.com/open?id=1kWclhvtgeUaPKmjuS-vJuox9AgUdcpAS)
+Michael take a look and see if any of these are helpful
