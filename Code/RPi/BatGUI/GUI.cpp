@@ -18,18 +18,23 @@ char n;
 
 SDL_Window* win = NULL;
 SDL_Surface* scr, *img = NULL;
-//SDL_Renderer* ren = NULL;
-//SDL_Texture* tex = NULL;
+SDL_Renderer* ren = NULL;
+SDL_Texture* tex = NULL;
+SDL_Rect stretchRect;
 
 int main(){
+    stretchRect.x = 0;
+    stretchRect.y = 0;
+    stretchRect.w = SCREEN_WIDTH;
+    stretchRect.h = SCREEN_HEIGHT;
+
     StreamSetup(STREAM , rpi_stream);
     cout<<"are we connected?"<<nl;
     cout<<"connection status: "<<Heartbeat(rpi_stream)<<endl; //check connection
 
     cout<<"init status: "<<InitDisplay(win, scr)<<nl;
-    cout<<"load status: "<<LoadMedia(img, scr, "images/background_placeholder.png", 1)<<nl;
 
-    SDL_BlitSurface(img, NULL, scr, NULL );
+    SDL_BlitScaled(LoadMedia(scr, "images/background_placeholder.png"), NULL, screen, &stretchRect );
     SDL_UpdateWindowSurface(win);
 
     bool quit = false;
@@ -48,4 +53,8 @@ int main(){
     //rpi_stream.Close();
 
     return 0;
+}
+
+int loadTexture(){
+
 }

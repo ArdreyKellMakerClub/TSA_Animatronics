@@ -2,12 +2,12 @@
 
 using namespace std;
 
-int InitDisplay(SDL_Window*& window, SDL_Surface*& screen){
+int InitDisplay(SDL_Window*& window, SDL_Surface*& screen, SDL_Renderer*& renderer){
     if (SDL_Init(SDL_INIT_VIDEO) != 0){
         cout<<"SDL_Init Error: "<<SDL_GetError()<<endl;
         return -1;
     }
-
+    cout<<"SDL_Video initialized!"<<nl;
     int imgFlags = IMG_INIT_PNG;
     if( !(IMG_Init( imgFlags ) & imgFlags ) ){
         cout<<"SDL_Init Error: "<<SDL_GetError()<<endl;
