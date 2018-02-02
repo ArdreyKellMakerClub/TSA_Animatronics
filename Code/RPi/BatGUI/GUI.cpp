@@ -32,10 +32,12 @@ int main(){
     cout<<"are we connected?"<<nl;
     cout<<"connection status: "<<Heartbeat(rpi_stream)<<endl; //check connection
 
-    cout<<"init status: "<<InitDisplay(win, scr)<<nl;
+    InitDisplay(win, scr,ren);
 
-    SDL_BlitScaled(LoadMedia(scr, "images/background_placeholder.png"), NULL, screen, &stretchRect );
+    SDL_BlitScaled(LoadMedia(scr, "images/background_placeholder.png"), NULL, scr, &stretchRect );
     SDL_UpdateWindowSurface(win);
+
+    tex = LoadTexture(ren, "images/button/button_unpressed.bmp");
 
     bool quit = false;
     SDL_Event e;
@@ -53,8 +55,4 @@ int main(){
     //rpi_stream.Close();
 
     return 0;
-}
-
-int loadTexture(){
-
 }

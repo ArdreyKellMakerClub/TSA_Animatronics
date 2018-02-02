@@ -12,8 +12,8 @@ using namespace std;
 const int SCREEN_WIDTH = 1280;
 const int SCREEN_HEIGHT = 720;
 
-int             InitDisplay     (SDL_Window*&, SDL_Surface*&, SDL_Renderer*&);
-SDL_Surface*    LoadMedia       (SDL_Surface*, string);
-void            CloseDisplay    (SDL_Surface*&, SDL_Window*&);
-
+int             InitDisplay(SDL_Window*&, SDL_Surface*&, SDL_Renderer*&);
+SDL_Surface*    LoadMedia(SDL_Surface*, string);
+void            CloseDisplay(SDL_Surface*&, SDL_Window*&);
+SDL_Texture*    LoadTexture(SDL_Renderer*, string);
 #endif // DISPLAYGUI_H_INCLUDED
