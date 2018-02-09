@@ -32,9 +32,11 @@ int main(){
     cout<<"are we connected?"<<nl;
     cout<<"connection status: "<<Heartbeat(rpi_stream)<<endl; //check connection
 
-    InitDisplay(win, scr,ren);
+    InitDisplay(win, scr, ren);
 
-    SDL_BlitScaled(LoadMedia(scr, "images/background_placeholder.png"), NULL, scr, &stretchRect );
+    SDL_Surface* background = LoadMedia(scr, "images/background_placeholder.bmp");
+
+    SDL_BlitScaled(background, NULL, scr, &stretchRect );
     SDL_UpdateWindowSurface(win);
 
     tex = LoadTexture(ren, "images/button/button_unpressed.bmp");
