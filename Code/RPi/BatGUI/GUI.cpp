@@ -21,6 +21,7 @@ SDL_Surface* scr, *img = NULL;
 SDL_Renderer* ren = NULL;
 SDL_Texture* tex = NULL;
 SDL_Rect stretchRect;
+SDL_Rect rectymcrectface;
 
 int main(){
     stretchRect.x = 0;
@@ -28,12 +29,16 @@ int main(){
     stretchRect.w = SCREEN_WIDTH;
     stretchRect.h = SCREEN_HEIGHT;
 
+    rectymcrectface.x = SCREEN_WIDTH/3;
+    rectymcrectface.y = SCREEN_HEIGHT/3;
+    rectymcrectface.w = 67;
+    rectymcrectface.h = 23;
+
     StreamSetup(STREAM , rpi_stream);
     cout<<"are we connected?"<<nl;
     cout<<"connection status: "<<Heartbeat(rpi_stream)<<endl; //check connection
 
     InitDisplay(win, scr, ren);
-
     SDL_Surface* background = LoadMedia(scr, "images/background_placeholder.bmp");
 
     SDL_BlitScaled(background, NULL, scr, &stretchRect );
@@ -48,6 +53,7 @@ int main(){
 
     SDL_BlitSurface(img, NULL, scr, NULL );
 
+
     while(!quit){
         while(SDL_PollEvent(&e) !=0){
             if (e.type == SDL_QUIT)
@@ -55,7 +61,7 @@ int main(){
         }
 
         SDL_RenderClear(ren);
-        SDL_RenderCopy(ren, tex, NULL, NULL);
+        SDL_RenderCopy(ren, tex, nullptr, &rectymcrectface);
 
         SDL_RenderPresent(ren);
         SDL_UpdateWindowSurface(win);
