@@ -41,16 +41,24 @@ int main(){
 
     tex = LoadTexture(ren, "images/button/button_unpressed.bmp");
 
+
+
     bool quit = false;
     SDL_Event e;
+
+    SDL_BlitSurface(img, NULL, scr, NULL );
 
     while(!quit){
         while(SDL_PollEvent(&e) !=0){
             if (e.type == SDL_QUIT)
                 quit = true;
-            SDL_BlitSurface(img, NULL, scr, NULL );
-            SDL_UpdateWindowSurface(win);
         }
+
+        SDL_RenderClear(ren);
+        SDL_RenderCopy(ren, tex, NULL, NULL);
+
+        SDL_RenderPresent(ren);
+        SDL_UpdateWindowSurface(win);
     }
 
     CloseDisplay(scr, win);
