@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1519413786 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/GUI.cpp
+1519757411 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/GUI.cpp
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<iostream>
 	"arduinoserial/arduinoserial.h"
 	"displaygui/displaygui.h"
+	"displaygui/TexWrap.h"
 
 1516125734 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/heartbeat.cpp
 	"arduinoserial.h"
@@ -85,17 +86,23 @@
 1516711768 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/CloseDisplay.cpp
 	"displaygui.h"
 
-1518118693 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/displaygui.h
+1519756414 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/displaygui.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<iostream>
 
-1518179396 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/InitDisplay.cpp
+1519755998 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/InitDisplay.cpp
 	"displaygui.h"
 
 1518118693 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/LoadMedia.cpp
 	"displaygui.h"
 
 1517499470 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/LoadTexture.cpp
+	"displaygui.h"
+
+1519757737 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/TexWrap.cpp
+	"TexWrap.h"
+
+1519757731 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/TexWrap.h
 	"displaygui.h"
 

@@ -52,6 +52,8 @@
 		<Unit filename="displaygui/InitDisplay.cpp" />
 		<Unit filename="displaygui/LoadMedia.cpp" />
 		<Unit filename="displaygui/LoadTexture.cpp" />
+		<Unit filename="displaygui/TexWrap.cpp" />
+		<Unit filename="displaygui/TexWrap.h" />
 		<Unit filename="displaygui/displaygui.h" />
 		<Extensions>
 			<code_completion />
