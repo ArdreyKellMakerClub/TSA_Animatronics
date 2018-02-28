@@ -14,6 +14,7 @@
 				<Compiler>
 					<Add option="-std=c++11" />
 					<Add option="-g" />
+					<Add directory="displaygui" />
 				</Compiler>
 				<Linker>
 					<Add option="-lserial" />
@@ -29,6 +30,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="displaygui" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -54,6 +56,8 @@
 		<Unit filename="displaygui/LoadTexture.cpp" />
 		<Unit filename="displaygui/TexWrap.cpp" />
 		<Unit filename="displaygui/TexWrap.h" />
+		<Unit filename="displaygui/button.cpp" />
+		<Unit filename="displaygui/button.h" />
 		<Unit filename="displaygui/displaygui.h" />
 		<Extensions>
 			<code_completion />

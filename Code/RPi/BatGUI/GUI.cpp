@@ -3,8 +3,9 @@
 #include <iostream>
 
 #include "arduinoserial/arduinoserial.h"
-#include "displaygui/displaygui.h"
-#include "displaygui/TexWrap.h"
+#include "displaygui.h"
+#include "TexWrap.h"
+#include "Button.h"
 
 #define nl "\n"
 
@@ -31,7 +32,7 @@ int main(){
 
     InitDisplay(win, scr, ren);
 
-    TexWrap button = TexWrap();
+    Button button = Button();
     button.TexWrap::load("images/button/button_unpressed.bmp", ren);
 
     TexWrap background = TexWrap();

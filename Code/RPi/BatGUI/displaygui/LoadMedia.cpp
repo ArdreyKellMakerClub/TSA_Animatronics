@@ -10,7 +10,7 @@ SDL_Surface* LoadMedia(SDL_Surface* screen, string file){
 
 
     //optimize image
-    image = SDL_ConvertSurface(temp, screen -> format, NULL);
+    image = SDL_ConvertSurface(temp, screen -> format, 0);
     if(image == NULL){
         cout<<"SDL Error: "<<IMG_GetError()<<endl;
     }
