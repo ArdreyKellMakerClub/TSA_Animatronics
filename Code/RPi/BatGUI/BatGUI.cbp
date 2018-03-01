@@ -50,14 +50,14 @@
 		<Unit filename="arduinoserial/StreamSetup.cpp" />
 		<Unit filename="arduinoserial/TrigPoll.cpp" />
 		<Unit filename="arduinoserial/arduinoserial.h" />
+		<Unit filename="displaygui/Button.cpp" />
+		<Unit filename="displaygui/Button.h" />
 		<Unit filename="displaygui/CloseDisplay.cpp" />
 		<Unit filename="displaygui/InitDisplay.cpp" />
 		<Unit filename="displaygui/LoadMedia.cpp" />
 		<Unit filename="displaygui/LoadTexture.cpp" />
 		<Unit filename="displaygui/TexWrap.cpp" />
 		<Unit filename="displaygui/TexWrap.h" />
-		<Unit filename="displaygui/button.cpp" />
-		<Unit filename="displaygui/button.h" />
 		<Unit filename="displaygui/displaygui.h" />
 		<Extensions>
 			<code_completion />
