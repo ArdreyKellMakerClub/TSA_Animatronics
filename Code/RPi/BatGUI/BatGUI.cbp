@@ -53,6 +53,8 @@
 		<Unit filename="displaygui/Button.cpp" />
 		<Unit filename="displaygui/Button.h" />
 		<Unit filename="displaygui/CloseDisplay.cpp" />
+		<Unit filename="displaygui/FramerateCapper.cpp" />
+		<Unit filename="displaygui/FramerateCapper.h" />
 		<Unit filename="displaygui/InitDisplay.cpp" />
 		<Unit filename="displaygui/LoadMedia.cpp" />
 		<Unit filename="displaygui/LoadTexture.cpp" />
