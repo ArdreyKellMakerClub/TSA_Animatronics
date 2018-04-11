@@ -57,7 +57,7 @@ int main(){
     bool quit = false;
     SDL_Event e;
 
-    int frames = 0;
+    int frame = 0;
     fps.start();
 
     while(!quit){
@@ -67,15 +67,9 @@ int main(){
                 quit = true;
         }
 
-        //calculate and correct FPS
-        float avgFPS = frames / ( fps.ticks() / 1000.f );
-        if( avgFPS > 2000000 ){
-            avgFPS = 0;
-        }
-
         //Set text to be rendered
         timeText.str( "" );
-        timeText << "Average Frames Per Second: " << avgFPS;
+        timeText << "Frame: " << frame;
 
         //render text
         if(fpsText.loadText( timeText.str().c_str(), textColor, 28, ren)<0){
@@ -91,7 +85,7 @@ int main(){
         button.render( 240, 190, ren );
         fpsText.render( 10, 10, ren);
         SDL_RenderPresent(ren);
-        ++frames;
+        ++frame;
 
         //If frame finished early
         int frameTicks = cap.ticks();
