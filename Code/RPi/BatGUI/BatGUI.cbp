@@ -21,6 +21,7 @@
 					<Add option="-lpthread" />
 					<Add option="-lSDL2" />
 					<Add option="-lSDL2_image" />
+					<Add option="-lSDL2_ttf" />
 				</Linker>
 			</Target>
 			<Target title="Release">

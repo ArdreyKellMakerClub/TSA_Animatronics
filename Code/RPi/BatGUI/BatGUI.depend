@@ -1,12 +1,18 @@
 # depslib dependency file v1.0
-1519758588 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/GUI.cpp
+1523455996 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/GUI.cpp
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
+	<stdio.h>
+	<string>
+	<cmath>
 	<iostream>
+	<sstream>
 	"arduinoserial/arduinoserial.h"
 	"displaygui.h"
 	"TexWrap.h"
 	"Button.h"
+	"FramerateCapper.h"
 
 1516125734 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/heartbeat.cpp
 	"arduinoserial.h"
@@ -87,12 +93,16 @@
 1516711768 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/CloseDisplay.cpp
 	"displaygui.h"
 
-1519928198 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/displaygui.h
+1523454770 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/displaygui.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
+	<stdio.h>
+	<string>
+	<cmath>
 	<iostream>
 
-1519755998 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/InitDisplay.cpp
+1523455352 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/InitDisplay.cpp
 	"displaygui.h"
 
 1519758616 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/LoadMedia.cpp
@@ -101,10 +111,10 @@
 1517499470 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/LoadTexture.cpp
 	"displaygui.h"
 
-1519757737 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/TexWrap.cpp
+1523454855 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/TexWrap.cpp
 	"TexWrap.h"
 
-1523452305 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/TexWrap.h
+1523455996 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/TexWrap.h
 	"displaygui.h"
 
 1519758337 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/Button.cpp

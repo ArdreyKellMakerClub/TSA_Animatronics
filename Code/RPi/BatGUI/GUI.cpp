@@ -32,7 +32,6 @@ SDL_Surface* scr, *img = NULL;
 SDL_Renderer* ren = NULL;
 SDL_Texture* tex = NULL;
 
-
 int main(){
 
     StreamSetup(STREAM , rpi_stream);
@@ -47,6 +46,8 @@ int main(){
     TexWrap background = TexWrap();
     background.TexWrap::load("images/background_placeholder.bmp", ren);
     background.setDim(SCREEN_WIDTH, SCREEN_HEIGHT);
+
+    TexWrap fpsText = TexWrap();
 
     SDL_Color textColor = {0,0,0,255};
 
@@ -74,9 +75,7 @@ int main(){
         timeText << "Average Frames Per Second (With Cap) " << avgFPS;
 
         //render text
-        if( !gFPSTextTexture.loadFromRenderedText( timeText.str().c_str(), textColor ) ){
-            printf( "Unable to render FPS texture!\n" );
-        }
+        fpsText.loadText( timeText.str().c_str(), textColor, 28, ren);
 
         //clear screen
         SDL_SetRenderDrawColor( ren, 0xFF, 0xFF, 0xFF, 0xFF );

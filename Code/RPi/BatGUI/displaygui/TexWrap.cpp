@@ -9,6 +9,7 @@ TexWrap::TexWrap(){ //default ctor
 
 
 int TexWrap::load(string path, SDL_Renderer* ren){
+    free();
     SDL_Surface* temp = IMG_Load(path.c_str());
     SDL_Texture* tempTex = nullptr;
     if(temp == nullptr){
@@ -34,9 +35,42 @@ int TexWrap::load(string path, SDL_Renderer* ren){
     return 1;
 }
 
-int TexWrap::loadText(string path, SDL_Color color, SDL_Renderer* ren){
+int TexWrap::loadText(string text, SDL_Color color, int ppt, SDL_Renderer* ren){
+    //Get rid of preexisting texture
+    free();
+
+    TTF_Font* font = TTF_OpenFont("/font/cmunrf.ttf", ppt);
+
+    //Render text surface
+    SDL_Surface* textSurface = TTF_RenderText_Solid( font, text.c_str(), color );
+    if( textSurface == NULL )
+    {
+        printf( "Unable to render text surface! SDL_ttf Error: %s\n", TTF_GetError() );
+        return -1;
+    }
+    else
+    {
+        //Create texture from surface pixels
+        texture = SDL_CreateTextureFromSurface( ren, textSurface );
+        if( texture == NULL )
+        {
+            printf( "Unable to create texture from rendered text! SDL Error: %s\n", SDL_GetError() );
+        }
+        else
+        {
+            //Get image dimensions
+            width = textSurface->w;
+            height = textSurface->h;
+        }
+
+        //Get rid of old surface
+        SDL_FreeSurface( textSurface );
+    }
+
+    //Return success
     return 0;
 }
+
 
 TexWrap::~TexWrap()
 {

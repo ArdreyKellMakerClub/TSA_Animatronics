@@ -13,14 +13,14 @@ int InitDisplay(SDL_Window*& window, SDL_Surface*& screen, SDL_Renderer*& render
     if (window == nullptr){
         cout<<"SDL_CreateWindow Error: "<<SDL_GetError()<<endl;
         SDL_Quit();
-        return -3;
+        return -2;
     }
     cout<<"Window Created!"<<nl;
 
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     if(renderer == nullptr){
         cout<<"SDL_CreateRenderer Error: "<<SDL_GetError()<<endl;
-        return -5;
+        return -3;
     }
 
     SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
@@ -37,8 +37,14 @@ int InitDisplay(SDL_Window*& window, SDL_Surface*& screen, SDL_Renderer*& render
         int imgFlags = IMG_INIT_PNG;
     if( !(IMG_Init( imgFlags ) & imgFlags ) ){
         cout<<"SDL_Init Error: "<<SDL_GetError()<<endl;
-        return -2;
+        return -5;
     }
+
+    if( TTF_Init() == -1 ){
+        printf( "SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError() );
+        return -6;
+    }
+
     cout<<"SDL Initialized!"<<nl;
 
     return 0;
