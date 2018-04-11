@@ -7,6 +7,8 @@
 #include <iostream>
 #include <sstream>
 
+#include <limits>
+
 #include "arduinoserial/arduinoserial.h"
 #include "displaygui.h"
 #include "TexWrap.h"
@@ -34,9 +36,11 @@ SDL_Texture* tex = NULL;
 
 int main(){
 
+    /*
     StreamSetup(STREAM , rpi_stream);
     cout<<"are we connected?"<<nl;
     cout<<"connection status: "<<Heartbeat(rpi_stream)<<endl; //check connection
+    */
 
     InitDisplay(win, scr, ren);
 
@@ -49,7 +53,7 @@ int main(){
 
     TexWrap fpsText = TexWrap();
 
-    SDL_Color textColor = {0,0,0,255};
+    SDL_Color textColor = {0xFF,0,0,255};
 
     bool quit = false;
     SDL_Event e;
@@ -72,21 +76,30 @@ int main(){
 
         //Set text to be rendered
         timeText.str( "" );
-        timeText << "Average Frames Per Second (With Cap) " << avgFPS;
+        timeText << "Average Frames Per Second: " << avgFPS;
 
         //render text
-        fpsText.loadText( timeText.str().c_str(), textColor, 28, ren);
+        if(fpsText.loadText( timeText.str().c_str(), textColor, 28, ren)<0){
+            cout<<"Unable to disply FPS"<<nl;
+        }
 
         //clear screen
         SDL_SetRenderDrawColor( ren, 0xFF, 0xFF, 0xFF, 0xFF );
         SDL_RenderClear( ren );
 
         //render textures
-        background.render( 0, 0,ren );
-        button.render( 240, 190,ren);
-
+        background.render( 0, 0, ren );
+        button.render( 240, 190, ren );
+        fpsText.render( 10, 10, ren);
         SDL_RenderPresent(ren);
         ++frames;
+
+        //If frame finished early
+        int frameTicks = cap.ticks();
+        if( frameTicks < SCREEN_TICKS_PER_FRAME ){
+            //Wait remaining time
+            SDL_Delay( SCREEN_TICKS_PER_FRAME - frameTicks );
+        }
     }
 
     CloseDisplay(scr, win);

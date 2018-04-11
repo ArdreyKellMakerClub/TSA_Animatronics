@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1523455996 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/GUI.cpp
+1523474162 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/GUI.cpp
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_ttf.h>
@@ -8,6 +8,7 @@
 	<cmath>
 	<iostream>
 	<sstream>
+	<limits>
 	"arduinoserial/arduinoserial.h"
 	"displaygui.h"
 	"TexWrap.h"
@@ -102,7 +103,7 @@
 	<cmath>
 	<iostream>
 
-1523455352 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/InitDisplay.cpp
+1523461406 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/InitDisplay.cpp
 	"displaygui.h"
 
 1519758616 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/LoadMedia.cpp
@@ -111,7 +112,7 @@
 1517499470 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/LoadTexture.cpp
 	"displaygui.h"
 
-1523454855 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/TexWrap.cpp
+1523461559 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/TexWrap.cpp
 	"TexWrap.h"
 
 1523455996 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/TexWrap.h

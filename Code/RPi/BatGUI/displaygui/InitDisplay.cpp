@@ -34,18 +34,20 @@ int InitDisplay(SDL_Window*& window, SDL_Surface*& screen, SDL_Renderer*& render
     }
     cout<<"Got window!"<<nl;
 
-        int imgFlags = IMG_INIT_PNG;
+    int imgFlags = IMG_INIT_PNG;
     if( !(IMG_Init( imgFlags ) & imgFlags ) ){
         cout<<"SDL_Init Error: "<<SDL_GetError()<<endl;
         return -5;
     }
+    cout<<"PNG loading enabled!"<<nl;
 
     if( TTF_Init() == -1 ){
-        printf( "SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError() );
+        printf( "SDL_ttf error! SDL_ttf Error: %s\n", TTF_GetError() );
         return -6;
     }
+    cout<<"TTF initialized!"<<nl;
 
-    cout<<"SDL Initialized!"<<nl;
+    cout<<"SDL Initialized!"<<endl;
 
     return 0;
 }
