@@ -6,8 +6,7 @@
 #include <cmath>
 #include <iostream>
 #include <sstream>
-
-#include <limits>
+#include <SDL2/SDL_mixer.h>
 
 #include "arduinoserial/arduinoserial.h"
 #include "displaygui.h"
