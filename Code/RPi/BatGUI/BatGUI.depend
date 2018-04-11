@@ -104,7 +104,7 @@
 1519757737 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/TexWrap.cpp
 	"TexWrap.h"
 
-1519757731 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/TexWrap.h
+1523452305 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/TexWrap.h
 	"displaygui.h"
 
 1519758337 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/Button.cpp
@@ -113,4 +113,10 @@
 1519758463 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/Button.h
 	"displaygui.h"
 	"TexWrap.h"
+
+1523360352 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/FramerateCapper.cpp
+	"FramerateCapper.h"
+
+1523279409 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/FramerateCapper.h
+	<displaygui.h>
 

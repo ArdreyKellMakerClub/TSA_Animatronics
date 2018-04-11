@@ -34,6 +34,10 @@ int TexWrap::load(string path, SDL_Renderer* ren){
     return 1;
 }
 
+int TexWrap::loadText(string path, SDL_Color color, SDL_Renderer* ren){
+    return 0;
+}
+
 TexWrap::~TexWrap()
 {
     free();//dtor
