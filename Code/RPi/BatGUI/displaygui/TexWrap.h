@@ -3,6 +3,7 @@
 #include "displaygui.h"
 using namespace std;
 
+
 class TexWrap
 {
     public:
@@ -15,7 +16,7 @@ class TexWrap
         void free();
         void render(int,int, SDL_Renderer*);
         int load(string, SDL_Renderer*);
-        int loadText(string, SDL_Color,int, SDL_Renderer*);
+        int loadText(string, TTF_Font*, SDL_Color,int, SDL_Renderer*);
         void setDim(int, int);
     protected:
 

@@ -58,7 +58,6 @@ int main(){
     SDL_Event e;
 
     int frame = 0;
-    fps.start();
 
     while(!quit){
         cap.start();
@@ -67,12 +66,15 @@ int main(){
                 quit = true;
         }
 
-        //Set text to be rendered
-        timeText.str( "" );
-        timeText << "Frame: " << frame;
+        SDL_Color textColor = {0,0xFF,0,255};
+        TTF_Font* font = TTF_OpenFont("font/cmunrm.ttf", 28);
+
+        //Set text to be render
+        timeText.str(std::string());
+        timeText << frame;
 
         //render text
-        if(fpsText.loadText( timeText.str().c_str(), textColor, 28, ren)<0){
+        if(fpsText.loadText( timeText.str(),font, textColor, 28, ren)<0){
             cout<<"Unable to disply FPS"<<nl;
         }
 

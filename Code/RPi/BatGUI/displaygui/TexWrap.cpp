@@ -35,11 +35,9 @@ int TexWrap::load(string path, SDL_Renderer* ren){
     return 1;
 }
 
-int TexWrap::loadText(string text, SDL_Color color, int ppt, SDL_Renderer* ren){
+int TexWrap::loadText(string text,TTF_Font* font, SDL_Color color, int ppt, SDL_Renderer* ren){
     //Get rid of preexisting texture
     free();
-
-    TTF_Font* font = TTF_OpenFont("font/cmunrm.ttf", ppt);
 
     //Render text surface
     SDL_Surface* textSurface = TTF_RenderText_Solid( font, text.c_str(), color );
