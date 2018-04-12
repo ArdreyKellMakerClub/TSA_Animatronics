@@ -50,12 +50,10 @@ int TexWrap::loadText(string text,TTF_Font* font, SDL_Color color, int ppt, SDL_
     {
         //Create texture from surface pixels
         texture = SDL_CreateTextureFromSurface( ren, textSurface );
+
         if( texture == NULL )
-        {
-            printf( "Unable to create texture from rendered text! SDL Error: %s\n", SDL_GetError() );
-        }
-        else
-        {
+            cout<<"Unable to create texture from rendered text! SDL Error: "<<SDL_GetError()<<endl;
+        else{
             //Get image dimensions
             width = textSurface->w;
             height = textSurface->h;
@@ -76,7 +74,11 @@ TexWrap::~TexWrap()
 }
 
 void TexWrap::free(){
-
+    if(texture != nullptr){
+        SDL_DestroyTexture( texture );
+        width = 0;
+        height = 0;
+    }
 }
 
 void TexWrap::render(int x, int y, SDL_Renderer* ren){
@@ -87,7 +89,6 @@ void TexWrap::render(int x, int y, SDL_Renderer* ren){
 void TexWrap::setDim(int w, int h){
     width = w;
     height = h;
-
 }
 
 int TexWrap::getHeight(){

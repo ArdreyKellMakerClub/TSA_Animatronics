@@ -26,6 +26,7 @@ std::stringstream timeText; //in memory text stream
 
 SerialStream rpi_stream;
 
+const double PI = 3.14159265;
 char n;
 
 SDL_Window* win = NULL;
@@ -52,6 +53,7 @@ int main(){
 
     TexWrap fpsText = TexWrap();
 
+    TTF_Font* font = TTF_OpenFont("font/cmunrm.ttf", 28);
     SDL_Color textColor = {0xFF,0,0,255};
 
     bool quit = false;
@@ -65,9 +67,6 @@ int main(){
             if (e.type == SDL_QUIT)
                 quit = true;
         }
-
-        SDL_Color textColor = {0,0xFF,0,255};
-        TTF_Font* font = TTF_OpenFont("font/cmunrm.ttf", 28);
 
         //Set text to be render
         timeText.str(std::string());
@@ -84,7 +83,7 @@ int main(){
 
         //render textures
         background.render( 0, 0, ren );
-        button.render( 240, 190, ren );
+        button.render( SCREEN_WIDTH/2 + 100*cos(frame*PI/24)-50, SCREEN_HEIGHT/5 + SCREEN_HEIGHT/6*sin(frame*PI/24), ren );
         fpsText.render( 10, 10, ren);
         SDL_RenderPresent(ren);
         ++frame;
