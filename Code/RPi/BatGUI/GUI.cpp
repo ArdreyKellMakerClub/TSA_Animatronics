@@ -22,7 +22,7 @@ using namespace std;
 using namespace LibSerial;
 
 FramerateCapper fps, cap;   //timers
-std::stringstream timeText; //in memory text stream
+std::stringstream timeText, timeText1; //in memory text stream
 
 SerialStream rpi_stream;
 
@@ -52,14 +52,17 @@ int main(){
     background.setDim(SCREEN_WIDTH, SCREEN_HEIGHT);
 
     TexWrap fpsText = TexWrap();
+    TexWrap frameText =  TexWrap();
 
     TTF_Font* font = TTF_OpenFont("font/cmunrm.ttf", 28);
-    SDL_Color textColor = {0xFF,0,0,255};
+    SDL_Color textColor = {0x22,0xFF,0x00,255};
 
     bool quit = false;
     SDL_Event e;
 
-    int frame = 0;
+    long long frame = 0;
+
+    fps.start();
 
     while(!quit){
         cap.start();
@@ -68,13 +71,22 @@ int main(){
                 quit = true;
         }
 
+        float avgFPS = frame / ( fps.ticks() / 1000.f );
+        if( avgFPS > 2000000 ){
+            avgFPS = 0;
+        }
+
         //Set text to be render
+        timeText1.str(std::string());
+        timeText1 <<"Frame: "<< frame;
+
         timeText.str(std::string());
-        timeText << frame;
+        timeText << "FPS: "<< avgFPS;
+
 
         //render text
-        if(fpsText.loadText( timeText.str(),font, textColor, 28, ren)<0){
-            cout<<"Unable to disply FPS"<<nl;
+        if(fpsText.loadText( timeText.str(),font, textColor, 28, ren)*frameText.loadText( timeText1.str(),font, textColor, 28, ren)<0){
+            cout<<"Unable to disply frame info"<<nl;
         }
 
         //clear screen
@@ -85,6 +97,7 @@ int main(){
         background.render( 0, 0, ren );
         button.render( SCREEN_WIDTH/2 + 100*cos(frame*PI/24)-50, SCREEN_HEIGHT/5 + SCREEN_HEIGHT/6*sin(frame*PI/24), ren );
         fpsText.render( 10, 10, ren);
+        frameText.render ( 10, 40, ren);
         SDL_RenderPresent(ren);
         ++frame;
 

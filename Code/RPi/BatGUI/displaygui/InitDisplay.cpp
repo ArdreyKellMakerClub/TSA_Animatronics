@@ -3,7 +3,7 @@
 using namespace std;
 
 int InitDisplay(SDL_Window*& window, SDL_Surface*& screen, SDL_Renderer*& renderer){
-    if (SDL_Init(SDL_INIT_VIDEO) != 0){
+    if (SDL_Init(SDL_INIT_VIDEO|SDL_INIT_AUDIO) != 0){
         cout<<"SDL_Init Error: "<<SDL_GetError()<<endl;
         return -1;
     }
@@ -40,6 +40,10 @@ int InitDisplay(SDL_Window*& window, SDL_Surface*& screen, SDL_Renderer*& render
         return -5;
     }
     cout<<"PNG loading enabled!"<<nl;
+
+    if( Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0){
+        cout<<"SDL_Mixer init error"<<nl;
+    }
 
     if( TTF_Init() == -1 ){
         printf( "SDL_ttf error! SDL_ttf Error: %s\n", TTF_GetError() );

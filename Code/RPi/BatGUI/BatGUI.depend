@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1523534427 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/GUI.cpp
+1523534570 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/GUI.cpp
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_ttf.h>
@@ -104,7 +104,7 @@
 	<cmath>
 	<iostream>
 
-1523461406 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/InitDisplay.cpp
+1523542980 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/InitDisplay.cpp
 	"displaygui.h"
 
 1519758616 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/LoadMedia.cpp
@@ -131,4 +131,10 @@
 
 1523279409 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/FramerateCapper.h
 	<displaygui.h>
+
+1523537441 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/Sound.cpp
+	"Sound.h"
+
+1523537465 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/Sound.h
+	<string>
 
