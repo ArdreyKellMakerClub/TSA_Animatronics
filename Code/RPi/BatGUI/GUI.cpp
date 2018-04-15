@@ -22,7 +22,7 @@ using namespace std;
 using namespace LibSerial;
 
 FramerateCapper fps, cap;   //timers
-std::stringstream timeText, timeText1; //in memory text stream
+std::stringstream timeText, timeText1, buttonStr; //in memory text stream
 
 SerialStream rpi_stream;
 
@@ -33,6 +33,8 @@ SDL_Window* win = NULL;
 SDL_Surface* scr, *img = NULL;
 SDL_Renderer* ren = NULL;
 SDL_Texture* tex = NULL;
+
+bool debug = false;
 
 int main(){
 
@@ -47,12 +49,17 @@ int main(){
     Button button = Button();
     button.TexWrap::load("images/button/button_unpressed.bmp", ren);
 
+    Button buttonTest = Button();
+    buttonTest.TexWrap::load("images/button/button_unpressed.bmp", ren);
+    buttonTest.setPos(SCREEN_WIDTH/3, SCREEN_HEIGHT/2);
+
     TexWrap background = TexWrap();
     background.TexWrap::load("images/background_placeholder.bmp", ren);
     background.setDim(SCREEN_WIDTH, SCREEN_HEIGHT);
 
     TexWrap fpsText = TexWrap();
-    TexWrap frameText =  TexWrap();
+    TexWrap frameText = TexWrap();
+    TexWrap buttonText = TexWrap();
 
     TTF_Font* font = TTF_OpenFont("font/cmunrm.ttf", 28);
     SDL_Color textColor = {0x22,0xFF,0x00,255};
@@ -69,7 +76,13 @@ int main(){
         while(SDL_PollEvent(&e) !=0){
             if (e.type == SDL_QUIT)
                 quit = true;
+            if(buttonTest.handleEvent(&e))
+                buttonTest.setPos(rand()%(SCREEN_WIDTH-buttonTest.getWidth()), rand()%(SCREEN_HEIGHT-buttonTest.getHeight()));
+            if(button.handleEvent(&e)){
+                debug = !debug;
+            }
         }
+
 
         float avgFPS = frame / ( fps.ticks() / 1000.f );
         if( avgFPS > 2000000 ){
@@ -83,9 +96,23 @@ int main(){
         timeText.str(std::string());
         timeText << "FPS: "<< avgFPS;
 
-
+        buttonStr.str(std::string());
+        buttonStr<< "Button Status: ";
+        switch(buttonTest.getState()){
+            case 0:
+                buttonStr<<"Unpressed";
+                break;
+            case 1:
+                buttonStr<<"Highlighted";
+                break;
+            case 2:
+                buttonStr<<"Pressed";
+                break;
+        }
         //render text
-        if(fpsText.loadText( timeText.str(),font, textColor, 28, ren)*frameText.loadText( timeText1.str(),font, textColor, 28, ren)<0){
+        if(fpsText.loadText( timeText.str(),font, textColor, 28, ren) * \
+            frameText.loadText( timeText1.str(),font, textColor, 28, ren) * \
+             buttonText.loadText( buttonStr.str(), font, textColor, 28, ren)<0){
             cout<<"Unable to disply frame info"<<nl;
         }
 
@@ -95,9 +122,16 @@ int main(){
 
         //render textures
         background.render( 0, 0, ren );
-        button.render( SCREEN_WIDTH/2 + 100*cos(frame*PI/24)-50, SCREEN_HEIGHT/5 + SCREEN_HEIGHT/6*sin(frame*PI/24), ren );
-        fpsText.render( 10, 10, ren);
-        frameText.render ( 10, 40, ren);
+        button.setPos( SCREEN_WIDTH/2 + 100*cos(frame*PI/120)-50, SCREEN_HEIGHT/5 + SCREEN_HEIGHT/6*sin(frame*PI/120));
+        button.render( ren );
+        buttonTest.render(ren);
+
+        if(debug){
+            fpsText.render( 10, 10, ren);
+            frameText.render( 10, 40, ren);
+            buttonText.render(10, 70, ren);
+        }
+
         SDL_RenderPresent(ren);
         ++frame;
 

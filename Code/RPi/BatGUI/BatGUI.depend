@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1523534570 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/GUI.cpp
+1523640756 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/GUI.cpp
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_ttf.h>
@@ -75,26 +75,26 @@
 1516153139 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/TrigPoll.cpp
 	"arduinoserial.h"
 
-1516711768 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/arduinoserial/Heartbeat.cpp
+1523559744 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/arduinoserial/Heartbeat.cpp
 	<chrono>
 	<thread>
 	"arduinoserial.h"
 
-1516711768 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/arduinoserial/arduinoserial.h
+1523559744 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/arduinoserial/arduinoserial.h
 	<SerialStream.h>
 	<SerialStreamBuf.h>
 	<iostream>
 
-1516711768 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/arduinoserial/StreamSetup.cpp
+1523559744 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/arduinoserial/StreamSetup.cpp
 	"arduinoserial.h"
 
-1516711768 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/arduinoserial/TrigPoll.cpp
+1523559744 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/arduinoserial/TrigPoll.cpp
 	"arduinoserial.h"
 
-1516711768 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/CloseDisplay.cpp
+1523559744 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/CloseDisplay.cpp
 	"displaygui.h"
 
-1523477296 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/displaygui.h
+1523559744 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/displaygui.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_ttf.h>
@@ -104,32 +104,32 @@
 	<cmath>
 	<iostream>
 
-1523542980 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/InitDisplay.cpp
+1523559744 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/InitDisplay.cpp
 	"displaygui.h"
 
-1519758616 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/LoadMedia.cpp
+1523559744 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/LoadMedia.cpp
 	"displaygui.h"
 
-1517499470 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/LoadTexture.cpp
+1523559744 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/LoadTexture.cpp
 	"displaygui.h"
 
-1523533809 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/TexWrap.cpp
+1523559744 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/TexWrap.cpp
 	"TexWrap.h"
 
-1523477308 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/TexWrap.h
+1523559744 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/TexWrap.h
 	"displaygui.h"
 
-1519758337 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/Button.cpp
+1523640756 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/Button.cpp
 	"Button.h"
 
-1519758463 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/Button.h
+1523633826 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/Button.h
 	"displaygui.h"
 	"TexWrap.h"
 
-1523360352 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/FramerateCapper.cpp
+1523559744 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/FramerateCapper.cpp
 	"FramerateCapper.h"
 
-1523279409 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/FramerateCapper.h
+1523559744 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/FramerateCapper.h
 	<displaygui.h>
 
 1523537441 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/Sound.cpp
