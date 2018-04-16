@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1523640756 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/GUI.cpp
+1523879526 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/GUI.cpp
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_ttf.h>
@@ -91,7 +91,7 @@
 1523559744 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/arduinoserial/TrigPoll.cpp
 	"arduinoserial.h"
 
-1523559744 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/CloseDisplay.cpp
+1523878408 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/CloseDisplay.cpp
 	"displaygui.h"
 
 1523559744 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/displaygui.h
@@ -104,7 +104,7 @@
 	<cmath>
 	<iostream>
 
-1523559744 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/InitDisplay.cpp
+1523878506 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/InitDisplay.cpp
 	"displaygui.h"
 
 1523559744 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/LoadMedia.cpp
@@ -113,7 +113,7 @@
 1523559744 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/LoadTexture.cpp
 	"displaygui.h"
 
-1523559744 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/TexWrap.cpp
+1523642814 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/TexWrap.cpp
 	"TexWrap.h"
 
 1523559744 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/TexWrap.h
@@ -137,4 +137,13 @@
 
 1523537465 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/Sound.h
 	<string>
+
+1523878264 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/Menu.cpp
+	"Menu.h"
+
+1523878330 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/BatGUI/displaygui/Menu.h
+	"displaygui.h"
+	"TexWrap.h"
+	"Button.h"
+	"FramerateCapper.h"
 

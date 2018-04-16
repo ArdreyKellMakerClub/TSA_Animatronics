@@ -62,7 +62,13 @@ int main(){
     TexWrap buttonText = TexWrap();
 
     TTF_Font* font = TTF_OpenFont("font/cmunrm.ttf", 28);
-    SDL_Color textColor = {0x22,0xFF,0x00,255};
+    SDL_Color textColor = {0x33,0xFF,0x00,255};
+
+    Mix_Music* crystallineCalls = nullptr;
+    Mix_Chunk* youSuffer = nullptr;
+
+    crystallineCalls = Mix_LoadMUS("audio/testMusic.mp3");
+    youSuffer        = Mix_LoadWAV("audio/testChunk.wav");
 
     bool quit = false;
     SDL_Event e;
@@ -73,47 +79,22 @@ int main(){
 
     while(!quit){
         cap.start();
+
+        if(Mix_PlayingMusic()==0)
+            Mix_PlayMusic(crystallineCalls,-1);
+
         while(SDL_PollEvent(&e) !=0){
             if (e.type == SDL_QUIT)
                 quit = true;
-            if(buttonTest.handleEvent(&e))
-                buttonTest.setPos(rand()%(SCREEN_WIDTH-buttonTest.getWidth()), rand()%(SCREEN_HEIGHT-buttonTest.getHeight()));
+            if(buttonTest.handleEvent(&e)){
+                buttonTest.setPos(rand()%(SCREEN_WIDTH-buttonTest.getWidth()), \
+                                  rand()%(SCREEN_HEIGHT-buttonTest.getHeight()));
+                Mix_PlayChannel( -1, youSuffer, 0);
+
+            }
             if(button.handleEvent(&e)){
                 debug = !debug;
             }
-        }
-
-
-        float avgFPS = frame / ( fps.ticks() / 1000.f );
-        if( avgFPS > 2000000 ){
-            avgFPS = 0;
-        }
-
-        //Set text to be render
-        timeText1.str(std::string());
-        timeText1 <<"Frame: "<< frame;
-
-        timeText.str(std::string());
-        timeText << "FPS: "<< avgFPS;
-
-        buttonStr.str(std::string());
-        buttonStr<< "Button Status: ";
-        switch(buttonTest.getState()){
-            case 0:
-                buttonStr<<"Unpressed";
-                break;
-            case 1:
-                buttonStr<<"Highlighted";
-                break;
-            case 2:
-                buttonStr<<"Pressed";
-                break;
-        }
-        //render text
-        if(fpsText.loadText( timeText.str(),font, textColor, 28, ren) * \
-            frameText.loadText( timeText1.str(),font, textColor, 28, ren) * \
-             buttonText.loadText( buttonStr.str(), font, textColor, 28, ren)<0){
-            cout<<"Unable to disply frame info"<<nl;
         }
 
         //clear screen
@@ -127,6 +108,40 @@ int main(){
         buttonTest.render(ren);
 
         if(debug){
+            float avgFPS = frame / ( fps.ticks() / 1000.f );
+            if( avgFPS > 2000000 ){
+                avgFPS = 0;
+            }
+
+            //Set text to be render
+            timeText1.str(std::string());
+            timeText1 <<"Frame: "<< frame;
+
+            timeText.str(std::string());
+            timeText << "FPS: "<< avgFPS;
+
+            buttonStr.str(std::string());
+            buttonStr<< "Button Status: ";
+            switch(buttonTest.getState()){
+                case 0:
+                    buttonStr<<"Unpressed";
+                    break;
+                case 1:
+                    buttonStr<<"Highlighted";
+                    break;
+                case 2:
+                    buttonStr<<"Pressed";
+                    break;
+            }
+
+            //draw text
+            if(fpsText.loadText( timeText.str(),font, textColor, 28, ren) * \
+                frameText.loadText( timeText1.str(),font, textColor, 28, ren) * \
+                 buttonText.loadText( buttonStr.str(), font, textColor, 28, ren)<0){
+                cout<<"Unable to disply frame info"<<nl;
+            }
+
+            //render text
             fpsText.render( 10, 10, ren);
             frameText.render( 10, 40, ren);
             buttonText.render(10, 70, ren);

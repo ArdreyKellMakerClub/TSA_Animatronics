@@ -44,6 +44,7 @@ int InitDisplay(SDL_Window*& window, SDL_Surface*& screen, SDL_Renderer*& render
     if( Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0){
         cout<<"SDL_Mixer init error"<<nl;
     }
+    cout<<"SDL_Mixer Initialized!"<<nl;
 
     if( TTF_Init() == -1 ){
         printf( "SDL_ttf error! SDL_ttf Error: %s\n", TTF_GetError() );
@@ -51,7 +52,7 @@ int InitDisplay(SDL_Window*& window, SDL_Surface*& screen, SDL_Renderer*& render
     }
     cout<<"TTF initialized!"<<nl;
 
-    cout<<"SDL Initialized!"<<endl;
+    cout<<"Display Initialized!"<<endl;
 
     return 0;
 }
