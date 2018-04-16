@@ -48,11 +48,11 @@ bool Button::handleEvent(SDL_Event* e){
             state = unpressed;
         else{
             switch(e->type){
-                case SDL_MOUSEMOTION:
-                    state = highlighted;
-                    break;
                 case SDL_MOUSEBUTTONDOWN:
                     state = pressed;
+                    break;
+                case SDL_MOUSEMOTION:
+                    state = highlighted;
                     break;
                 case SDL_MOUSEBUTTONUP:
                     state = highlighted;

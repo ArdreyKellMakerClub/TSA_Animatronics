@@ -9,7 +9,7 @@ int InitDisplay(SDL_Window*& window, SDL_Surface*& screen, SDL_Renderer*& render
     }
     cout<<"SDL_Video initialized!"<<nl;
 
-    window = SDL_CreateWindow("Bat Gui", 100, 100, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+    window = SDL_CreateWindow("Bat Gui", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN || SDL_WINDOW_FULLSCREEN || SDL_WINDOW_MAXIMIZED);
     if (window == nullptr){
         cout<<"SDL_CreateWindow Error: "<<SDL_GetError()<<endl;
         SDL_Quit();
@@ -53,6 +53,7 @@ int InitDisplay(SDL_Window*& window, SDL_Surface*& screen, SDL_Renderer*& render
     cout<<"TTF initialized!"<<nl;
 
     cout<<"Display Initialized!"<<endl;
+
 
     return 0;
 }
