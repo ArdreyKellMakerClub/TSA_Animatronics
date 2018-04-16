@@ -86,7 +86,11 @@ int main(){
         while(SDL_PollEvent(&e) !=0){
             if (e.type == SDL_QUIT)
                 quit = true;
-            if(buttonTest.handleEvent(&e)){
+            else if (e.type == SDL_KEYDOWN){
+                if (e.key.keysym.scancode == SDL_SCANCODE_ESCAPE)
+                    quit = true;
+            }
+            else if(buttonTest.handleEvent(&e)){
                 buttonTest.setPos(rand()%(SCREEN_WIDTH-buttonTest.getWidth()), \
                                   rand()%(SCREEN_HEIGHT-buttonTest.getHeight()));
                 Mix_PlayChannel( -1, youSuffer, 0);
