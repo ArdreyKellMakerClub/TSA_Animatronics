@@ -8,7 +8,7 @@
 #include <sstream>
 #include <SDL2/SDL_mixer.h>
 
-#include "arduinoserial/arduinoserial.h"
+//#include "arduinoserial/arduinoserial.h"
 #include "displaygui.h"
 #include "TexWrap.h"
 #include "Button.h"
@@ -19,12 +19,12 @@
 #define STREAM "/dev/ttyACM0" //change in rpi
 
 using namespace std;
-using namespace LibSerial;
+//using namespace LibSerial;
 
 FramerateCapper fps, cap;   //timers
 std::stringstream timeText, timeText1, buttonStr; //in memory text stream
 
-SerialStream rpi_stream;
+//SerialStream rpi_stream;
 
 const double PI = 3.14159265;
 char n;
