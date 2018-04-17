@@ -16,7 +16,7 @@ int TexWrap::load(string path, SDL_Renderer* ren){
         cout<<"Unable to load image %s! SDL_image Error: %s\n"<<path.c_str()<<IMG_GetError()<<nl;
         return -1;
     }
-    else{//set colour cey
+    else{//set colour key
         SDL_SetColorKey(temp, SDL_TRUE, SDL_MapRGB(temp->format, 0xFF, 0xAA, 0xFF));
         tempTex = SDL_CreateTextureFromSurface(ren, temp);
         if( tempTex == NULL ){
