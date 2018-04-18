@@ -37,28 +37,28 @@ int main(){
     InitDisplay(win, scr, ren);
 
     Button button = Button();
-    button.TexWrap::load("images/button/button_unpressed.bmp", ren);
+    button.TexWrap::load("assets/images/button/button_unpressed.bmp", ren);
 
     Button buttonTest = Button();
-    buttonTest.TexWrap::load("images/button/button_unpressed.bmp", ren);
+    buttonTest.TexWrap::load("assets/images/button/button_unpressed.bmp", ren);
     buttonTest.setPos(SCREEN_WIDTH/3, SCREEN_HEIGHT/2);
 
     TexWrap background = TexWrap();
-    background.TexWrap::load("images/background_placeholder.bmp", ren);
+    background.TexWrap::load("assets/images/background_placeholder.bmp", ren);
     background.setDim(SCREEN_WIDTH, SCREEN_HEIGHT);
 
     TexWrap fpsText = TexWrap();
     TexWrap frameText = TexWrap();
     TexWrap buttonText = TexWrap();
 
-    TTF_Font* font = TTF_OpenFont("font/cmunrm.ttf", 28);
+    TTF_Font* font = TTF_OpenFont("assets/font/cmunrm.ttf", 28);
     SDL_Color textColor = {0x33,0xFF,0x00,255};
 
     Mix_Music* crystallineCalls = nullptr;
     Mix_Chunk* youSuffer = nullptr;
 
-    crystallineCalls = Mix_LoadMUS("audio/testMusic.mp3");
-    youSuffer        = Mix_LoadWAV("audio/testChunk.wav");
+    crystallineCalls = Mix_LoadMUS("assets/audio/testMusic.mp3");
+    youSuffer        = Mix_LoadWAV("assets/audio/testChunk.wav");
 
     bool quit = false;
     SDL_Event e;
