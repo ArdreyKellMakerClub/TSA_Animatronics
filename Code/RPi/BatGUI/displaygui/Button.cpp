@@ -9,24 +9,11 @@ Button::~Button(){
 }
     //dtor
 void Button::render(SDL_Renderer* ren){
-    TexWrap::render(position.x, position.y, ren);
-    /*
-    switch(state){
-        case unpressed:
-            SDL_RenderCopy( ren, buttonUnpressed, NULL, &box );
-            break;
-        case highlighted:
-            SDL_RenderCopy( ren, buttonHighlighted, NULL, &box );
-            break;
-        case pressed:
-            SDL_RenderCopy( ren, buttonPressed, NULL, &box );
-            break;
-    }
-    */
+
 }
 
 int Button::load(string path, SDL_Renderer* ren){
-        return 0;
+    return 0;
 }
 
 bool Button::handleEvent(SDL_Event* e){
@@ -66,9 +53,4 @@ bool Button::handleEvent(SDL_Event* e){
 
 int Button::getState(){
     return state;
-}
-
-void Button::setPos(int x, int y){
-    position.x=x;
-    position.y=y;
 }

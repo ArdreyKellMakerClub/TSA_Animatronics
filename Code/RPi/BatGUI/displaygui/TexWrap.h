@@ -14,17 +14,19 @@ class TexWrap
         int getHeight();
 
         void free();
-        void render(int,int, SDL_Renderer*);
+        void render(SDL_Renderer*);
         int load(string, SDL_Renderer*);
         int loadText(string, TTF_Font*, SDL_Color,int, SDL_Renderer*);
         void setDim(int, int);
+        void setPos(int, int);
     protected:
-
-    private:
         SDL_Texture* texture;
         SDL_Rect rectangle;
         int width;
         int height;
+        SDL_Point position;
+    private:
+
 };
 
 #endif // TEXWRAP_H

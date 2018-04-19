@@ -81,8 +81,8 @@ void TexWrap::free(){
     }
 }
 
-void TexWrap::render(int x, int y, SDL_Renderer* ren){
-    SDL_Rect box = { x, y, width, height };
+void TexWrap::render(SDL_Renderer* ren){
+    SDL_Rect box = { position.x, position.y, width, height };
     SDL_RenderCopy( ren, texture, NULL, &box );
 }
 
@@ -98,3 +98,9 @@ int TexWrap::getHeight(){
 int TexWrap::getWidth(){
     return width;
 }
+
+void TexWrap::setPos(int x, int y){
+    position.x=x;
+    position.y=y;
+}
+

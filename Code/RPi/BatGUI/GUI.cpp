@@ -41,15 +41,19 @@ int main(){
 
     Button buttonTest = Button();
     buttonTest.TexWrap::load("assets/images/button/button_unpressed.bmp", ren);
-    buttonTest.setPos(SCREEN_WIDTH/3, SCREEN_HEIGHT/2);
+    buttonTest.TexWrap::setPos(SCREEN_WIDTH/3, SCREEN_HEIGHT/2);
 
     TexWrap background = TexWrap();
     background.TexWrap::load("assets/images/background_placeholder.bmp", ren);
     background.setDim(SCREEN_WIDTH, SCREEN_HEIGHT);
+    background.setPos(0,0);
 
     TexWrap fpsText = TexWrap();
+    fpsText.setPos(10,10);
     TexWrap frameText = TexWrap();
+    frameText.setPos(10,40);
     TexWrap buttonText = TexWrap();
+    buttonText.setPos(10,70);
 
     TTF_Font* font = TTF_OpenFont("assets/font/cmunrm.ttf", 28);
     SDL_Color textColor = {0x33,0xFF,0x00,255};
@@ -81,7 +85,7 @@ int main(){
                     quit = true;
             }
             else if(buttonTest.handleEvent(&e)){
-                buttonTest.setPos(rand()%(SCREEN_WIDTH-buttonTest.getWidth()), \
+                buttonTest.TexWrap::setPos(rand()%(SCREEN_WIDTH-buttonTest.getWidth()), \
                                   rand()%(SCREEN_HEIGHT-buttonTest.getHeight()));
                 Mix_PlayChannel( -1, youSuffer, 0);
 
@@ -96,10 +100,10 @@ int main(){
         SDL_RenderClear( ren );
 
         //render textures
-        background.render( 0, 0, ren );
-        button.setPos( SCREEN_WIDTH/2 + 100*cos(frame*PI/120)-50, SCREEN_HEIGHT/5 + SCREEN_HEIGHT/6*sin(frame*PI/120));
-        button.render( ren );
-        buttonTest.render(ren);
+        background.render(ren);
+        button.TexWrap::setPos( SCREEN_WIDTH/2 + 100*cos(frame*PI/120)-50, SCREEN_HEIGHT/5 + SCREEN_HEIGHT/6*sin(frame*PI/120));
+        button.TexWrap::render( ren );
+        buttonTest.TexWrap::render(ren);
 
         if(debug){
             float avgFPS = frame / ( fps.ticks() / 1000.f );
@@ -136,9 +140,9 @@ int main(){
             }
 
             //render text
-            fpsText.render( 10, 10, ren);
-            frameText.render( 10, 40, ren);
-            buttonText.render(10, 70, ren);
+            fpsText.render(ren);
+            frameText.render(ren);
+            buttonText.render(ren);
         }
 
         SDL_RenderPresent(ren);

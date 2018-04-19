@@ -1,5 +1,8 @@
 #ifndef BUTTON_H
 #define BUTTON_H
+
+#include <vector>
+
 #include "displaygui.h"
 #include "TexWrap.h"
 
@@ -15,10 +18,9 @@ class Button : public TexWrap
         int getState();
     protected:
     private:
-        SDL_Texture* buttonUnpressed, *buttonHighlighted, *buttonPressed;
+        vector<SDL_Texture*> textures;
         enum States{unpressed, highlighted, pressed};
         int state;
-        SDL_Point position;
 };
 
 #endif // BUTTON_H
