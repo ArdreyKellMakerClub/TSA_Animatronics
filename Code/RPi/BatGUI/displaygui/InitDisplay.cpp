@@ -23,7 +23,7 @@ int InitDisplay(SDL_Window*& window, SDL_Surface*& screen, SDL_Renderer*& render
         return -3;
     }
 
-    SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+    SDL_SetRenderDrawColor( renderer, 0xD3, 0xB6, 0x8D, 0xFF );
     cout<<"Renderer created!"<<nl;
 
     screen = SDL_GetWindowSurface(window);
