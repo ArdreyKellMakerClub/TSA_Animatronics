@@ -65,6 +65,8 @@
 		<Unit filename="displaygui/TexWrap.cpp" />
 		<Unit filename="displaygui/TexWrap.h" />
 		<Unit filename="displaygui/displaygui.h" />
+		<Unit filename="menu/Menu.cpp" />
+		<Unit filename="menu/Menu.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
