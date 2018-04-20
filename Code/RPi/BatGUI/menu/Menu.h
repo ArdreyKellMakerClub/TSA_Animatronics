@@ -15,7 +15,7 @@ using namespace std;
 
 const double PI = 3.14159265;
 
-enum states {START, MAIN, ECHO, POLLEN, FLIGHT, TEST};
+enum states {START, MAIN, ECHO, POLLEN, FLIGHT, TEST, QUIT};
 
 
 class Menu
@@ -48,7 +48,7 @@ class Menu
             void renderPollen(SDL_Renderer*);
             void renderFlight(SDL_Renderer*);
             void renderTest(SDL_Renderer*, FramerateCapper, FramerateCapper);
-
+        bool quitFlag();
     protected:
         TTF_Font* font;
         SDL_Color textColor;

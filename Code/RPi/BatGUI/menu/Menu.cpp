@@ -46,13 +46,18 @@ void Menu::renderMain(SDL_Renderer* ren){
     flightIco.render(ren);
 }
 void Menu::renderEcho(SDL_Renderer* ren){
-
+    diagram.render(ren);
+    goBack.TexWrap::render(ren);
 }
 void Menu::renderPollen(SDL_Renderer* ren){
-
+    banana.render(ren);
+    mango.render(ren);
+    guava.render(ren);
+    goBack.TexWrap::render(ren);
 }
 void Menu::renderFlight(SDL_Renderer* ren){
-
+    bat.render(ren);
+    goBack.TexWrap::render(ren);
 }
 void Menu::renderTest(SDL_Renderer* ren, FramerateCapper fps, FramerateCapper cap){
     stringstream timeText, timeText1, buttonStr;
@@ -136,16 +141,40 @@ void Menu::handleStartEvent(SDL_Event*e){
     }
 }
 void Menu::handleMainEvent(SDL_Event*e){
-
+    if(echo.handleEvent(e)){
+        page = ECHO;
+        //Mix_PlayChannel(-1, intro, 0);
+    }
+    else if(pollen.handleEvent(e)){
+        page = POLLEN;
+        //Mix_PlayChannel(-1, intro, 0);
+    }
+    else if(flight.handleEvent(e)){
+        page = FLIGHT;
+        //Mix_PlayChannel(-1, intro, 0);
+    }
+    else if(quit.handleEvent(e)){
+        page = QUIT;
+        //Mix_PlayChannel(-1, intro, 0);
+    }
 }
 void Menu::handleEchoEvent(SDL_Event*e){
-
+    if(goBack.handleEvent(e)){
+        page = MAIN;
+        //Mix_PlayChannel(-1, intro, 0);
+    }
 }
 void Menu::handlePollenEvent(SDL_Event*e){
-
+    if(goBack.handleEvent(e)){
+        page = MAIN;
+        //Mix_PlayChannel(-1, intro, 0);
+    }
 }
 void Menu::handleFlightEvent(SDL_Event*e){
-
+    if(goBack.handleEvent(e)){
+        page = MAIN;
+        //Mix_PlayChannel(-1, intro, 0);
+    }
 }
 void Menu::handleTestEvent(SDL_Event* e){
     if (buttonTest.handleEvent(e)){
@@ -216,12 +245,12 @@ void Menu::loadMain(SDL_Renderer*ren){
                            SCREEN_HEIGHT*3/5-pollen.TexWrap::getHeight()/2);
 
     flight = Button();
-    flight.TexWrap::load("assets/images/start/start_unpressed.bmp", ren);
+    flight.TexWrap::load("assets/images/flight/flight_unpressed.bmp", ren);
     flight.TexWrap::setPos(SCREEN_WIDTH*3/4-flight.TexWrap::getWidth()/2,\
                            SCREEN_HEIGHT*3/5-flight.TexWrap::getHeight()/2);
 
     quit = Button();
-    quit.TexWrap::load("assets/images/start/start_unpressed.bmp", ren);
+    quit.TexWrap::load("assets/images/quit/quit_unpressed.bmp", ren);
     quit.TexWrap::setPos(SCREEN_WIDTH/2-quit.TexWrap::getWidth()/2,\
                           SCREEN_HEIGHT*6/7-quit.TexWrap::getHeight()/2);
 
@@ -241,13 +270,37 @@ void Menu::loadMain(SDL_Renderer*ren){
                      SCREEN_HEIGHT/3-flightIco.getHeight()/2);
 }
 void Menu::loadEcho(SDL_Renderer*ren){
+    goBack = Button();
+    goBack.TexWrap::load("assets/images/back/back_unpressed.bmp", ren);
+    goBack.TexWrap::setPos(SCREEN_WIDTH/2-goBack.TexWrap::getWidth()/2,\
+                           SCREEN_HEIGHT*6/7-goBack.TexWrap::getHeight()/2);
 
+    diagram = TexWrap();
+    diagram.load("assets/images/diagram.bmp", ren);
+    diagram.setPos(SCREEN_WIDTH/2-diagram.getWidth()/2,\
+                   SCREEN_HEIGHT/2-diagram.getHeight()/2);
 }
 void Menu::loadPollen(SDL_Renderer*ren){
+    banana = TexWrap();
+    banana.load("assets/images/banana.bmp", ren);
+    banana.setPos(SCREEN_WIDTH*4-banana.getWidth()/2,\
+                  SCREEN_HEIGHT/2-banana.getHeight()/2);
 
+    mango = TexWrap();
+    mango.load("assets/images/mango.bmp", ren);
+    mango.setPos(SCREEN_WIDTH*2-mango.getWidth()/2,\
+                 SCREEN_HEIGHT/2-mango.getHeight()/2);
+
+    guava = TexWrap();
+    guava.load("assets/images/guava.bmp", ren);
+    guava.setPos(SCREEN_WIDTH*3/4-guava.getWidth()/2,\
+                 SCREEN_HEIGHT/2-guava.getHeight()/2);
 }
 void Menu::loadFlight(SDL_Renderer*ren){
-
+    bat = TexWrap();
+    bat.load("assets/images/bat.bmp", ren);
+    bat.setPos(SCREEN_WIDTH*2-bat.getWidth()/2,\
+               SCREEN_HEIGHT/2-bat.getHeight()/2);
 }
 void Menu::loadTest(SDL_Renderer*ren){
     button = Button();
@@ -271,7 +324,9 @@ void Menu::loadTest(SDL_Renderer*ren){
     youSuffer = Mix_LoadWAV("assets/audio/testChunk.wav");
 }
 
-
+bool Menu::quitFlag(){
+    return page == QUIT;
+}
 
 
 

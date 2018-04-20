@@ -53,6 +53,8 @@ int main(){
                     quit = true;
             }
             testMenu.handleEvent(&e);
+            if(testMenu.quitFlag())
+                quit = true;
         }
 
         SDL_RenderClear( ren );
