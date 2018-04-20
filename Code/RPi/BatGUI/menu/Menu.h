@@ -41,8 +41,8 @@ class Menu
         TTF_Font* font;
         SDL_Color textColor;
     private:
-        int state = 0;
-        enum states {start, main, echo, pollen, flight};
+        int state = 5;
+        enum states {start, main, echo, pollen, flight, test};
 };
 
 #endif // MENU_H

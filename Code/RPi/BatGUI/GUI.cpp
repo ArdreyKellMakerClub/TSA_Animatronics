@@ -49,7 +49,7 @@ int main(){
             if (e.type == SDL_QUIT)
                 quit = true;
             else if (e.type == SDL_KEYDOWN){
-                if (e.key.keysym.scancode == SDL_SCANCODE_ESCAPE)
+                if (e.key.keysym.scancode == SDL_SCANCODE_ESCAPE || e.key.keysym.scancode==SDL_SCANCODE_GRAVE)
                     quit = true;
             }
             testMenu.handleEvent(&e);

@@ -21,6 +21,9 @@ void Menu::render(SDL_Renderer* ren, FramerateCapper fps, FramerateCapper cap){
             break;
         case flight:
             break;
+        case test:
+            renderTest(ren, fps, cap);
+            break;
     }
 }
 
