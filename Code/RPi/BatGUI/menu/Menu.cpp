@@ -191,7 +191,6 @@ void Menu::close(){
 
 }
 
-
 void Menu::load(SDL_Renderer*ren){
     SDL_RenderClear(ren);background.render(ren);SDL_RenderPresent(ren);
     font = TTF_OpenFont("assets/font/cmunrm.ttf", 28);
