@@ -54,6 +54,15 @@ void Menu::renderPollen(SDL_Renderer* ren){
     mango.render(ren);
     guava.render(ren);
     goBack.TexWrap::render(ren);
+    if(narrKey==0){
+        Mix_PlayChannel(1, pollenNarr, 0);
+        cout<<Mix_GetError()<<nl;
+        narrKey=1;
+    }
+    else if(narrKey==1&&Mix_Playing(1)==0){
+        Mix_PlayChannel(1, backNarr, 0);
+        narrKey=-1;
+    }
 }
 void Menu::renderFlight(SDL_Renderer* ren){
     bat.render(ren);
@@ -64,10 +73,10 @@ void Menu::renderTest(SDL_Renderer* ren, FramerateCapper fps, FramerateCapper ca
 
     background.render(ren);
 
-    button.TexWrap::setPos( SCREEN_WIDTH/2 + 100*cos(frame*PI/120)-50, \
+    button.setPos( SCREEN_WIDTH/2 + 100*cos(frame*PI/120)-50, \
                             SCREEN_HEIGHT/5 + 120*sin(frame*PI/120));
-    button.TexWrap::render( ren );
-    buttonTest.TexWrap::render(ren);
+    button.render( ren );
+    buttonTest.render(ren);
 
     if(debug){
         float avgFPS = frame / ( fps.ticks() / 1000.f );
@@ -137,50 +146,53 @@ void Menu::handleEvent(SDL_Event*e){
 void Menu::handleStartEvent(SDL_Event*e){
     if(start.handleEvent(e)){
         page = MAIN;
-        //Mix_PlayChannel(-1, intro, 0);
+        narrKey = 0;
     }
 }
 void Menu::handleMainEvent(SDL_Event*e){
     if(echo.handleEvent(e)){
         page = ECHO;
-        //Mix_PlayChannel(-1, intro, 0);
+        narrKey=0;
     }
     else if(pollen.handleEvent(e)){
         page = POLLEN;
-        //Mix_PlayChannel(-1, intro, 0);
+        narrKey = 0;
+
     }
     else if(flight.handleEvent(e)){
         page = FLIGHT;
-        //Mix_PlayChannel(-1, intro, 0);
+        narrKey = 0;
     }
     else if(quit.handleEvent(e)){
         page = QUIT;
-        //Mix_PlayChannel(-1, intro, 0);
+        Mix_PlayChannel(-1, youSuffer, 0);
     }
 }
 void Menu::handleEchoEvent(SDL_Event*e){
     if(goBack.handleEvent(e)){
         page = MAIN;
-        //Mix_PlayChannel(-1, intro, 0);
+        narrKey = -1
     }
+    //add serial communication here to handle events
+    //switch case for sounds
 }
 void Menu::handlePollenEvent(SDL_Event*e){
     if(goBack.handleEvent(e)){
+        narrKey = -0;
         page = MAIN;
-        //Mix_PlayChannel(-1, intro, 0);
     }
 }
 void Menu::handleFlightEvent(SDL_Event*e){
     if(goBack.handleEvent(e)){
+        narrKey = -0;
         page = MAIN;
-        //Mix_PlayChannel(-1, intro, 0);
     }
 }
 void Menu::handleTestEvent(SDL_Event* e){
     if (buttonTest.handleEvent(e)){
         buttonTest.TexWrap::setPos(rand()%(SCREEN_WIDTH-buttonTest.getWidth()), \
                                    rand()%(SCREEN_HEIGHT-buttonTest.getHeight()));
-                Mix_PlayChannel(-1, youSuffer, 0);
+        Mix_PlayChannel(-1, youSuffer, 0);
     }
     if (button.handleEvent(e)){
         debug = !debug;
@@ -294,6 +306,12 @@ void Menu::loadPollen(SDL_Renderer*ren){
     guava.load("assets/images/guava.bmp", ren);
     guava.setPos(SCREEN_WIDTH*3/4-guava.getWidth()/2,\
                  SCREEN_HEIGHT/2-guava.getHeight()/2);
+
+    pollenNarr = Mix_LoadWAV("assets/audio/Pollination.wav");
+    if(pollenNarr == nullptr) cout<<"failed to load pollenNarr! SDL_Mixer error: "<<Mix_GetError()<<nl;
+
+    backNarr = Mix_LoadWAV("assets/audio/back.wav");
+    if(backNarr == nullptr) cout<<"failed to load backNarr! SDL_Mixer error: "<<Mix_GetError()<<nl;
 }
 void Menu::loadFlight(SDL_Renderer*ren){
     bat = TexWrap();
@@ -303,13 +321,13 @@ void Menu::loadFlight(SDL_Renderer*ren){
 }
 void Menu::loadTest(SDL_Renderer*ren){
     button = Button();
-    button.TexWrap::load("assets/images/button/button_unpressed.bmp", ren);
+    button.load("assets/images/button/button", ren);
 
     buttonTest = Button();
-    buttonTest.TexWrap::load("assets/images/button/button_unpressed.bmp", ren);
-    buttonTest.TexWrap::setPos(SCREEN_WIDTH/3, SCREEN_HEIGHT/2);
+    buttonTest.load("assets/images/button/button", ren);
+    buttonTest.setPos(SCREEN_WIDTH/3, SCREEN_HEIGHT/2);
 
-    background.TexWrap::load("assets/images/background_placeholder.bmp", ren);
+    background.TexWrap::load("assets/images/background.bmp", ren);
     background.setDim(SCREEN_WIDTH, SCREEN_HEIGHT);
     background.setPos(0,0);
 
@@ -320,7 +338,7 @@ void Menu::loadTest(SDL_Renderer*ren){
     buttonText = TexWrap();
     buttonText.setPos(10,70);
 
-    youSuffer = Mix_LoadWAV("assets/audio/testChunk.wav");
+    youSuffer = Mix_LoadWAV("assets/audio/test/testChunk.wav");
 }
 
 bool Menu::quitFlag(){

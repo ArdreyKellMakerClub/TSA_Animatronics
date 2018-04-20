@@ -52,6 +52,7 @@ class Menu
     protected:
         TTF_Font* font;
         SDL_Color textColor;
+        int narrKey;
 
         //start
         Button start;
@@ -59,12 +60,17 @@ class Menu
         //main
         Button echo, pollen, flight, quit;
         TexWrap echoIco, pollenIco, flightIco;
+        Mix_Chunk* intro;
 
         //info
         Button goBack;
         TexWrap diagram;
         TexWrap bat;
         TexWrap banana, mango, guava;
+        Mix_Chunk* pollenNarr;
+        Mix_Chunk* flightNarr;
+        Mix_Chunk* echoNarr;
+        Mix_Chunk* backNarr;
 
         //test
         Button button, buttonTest;

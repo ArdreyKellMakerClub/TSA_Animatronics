@@ -41,7 +41,7 @@ int InitDisplay(SDL_Window*& window, SDL_Surface*& screen, SDL_Renderer*& render
     }
     cout<<"PNG loading enabled!"<<nl;
 
-    if( Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0){
+    if( Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 1048576) < 0){
         cout<<"SDL_Mixer init error"<<nl;
     }
     cout<<"SDL_Mixer Initialized!"<<nl;

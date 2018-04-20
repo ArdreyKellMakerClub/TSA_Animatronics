@@ -1,7 +1,7 @@
 #include "Button.h"
 
 Button::Button(){
-
+    state = UNPRESSED;
 }
 
 Button::~Button(){
@@ -9,11 +9,34 @@ Button::~Button(){
 }
     //dtor
 void Button::render(SDL_Renderer* ren){
-
+    switch (state){
+        case UNPRESSED:
+            unpressed.render(ren);
+            break;
+        case HIGHLIGHTED:
+            highlighted.render(ren);
+            break;
+        case PRESSED:
+            pressed.render(ren);
+            break;
+    }
 }
 
-int Button::load(string path, SDL_Renderer* ren){
-    return 0;
+void Button::load(string path, SDL_Renderer* ren){
+    unpressed = TexWrap();
+    unpressed.load(path+"_unpressed.bmp", ren);
+
+    highlighted = TexWrap();
+    highlighted.load(path+"_highlighted.bmp", ren);
+
+    pressed = TexWrap();
+    pressed.load(path+"_highlighted.bmp", ren);
+}
+
+void Button::setPos(int x, int y){
+    unpressed.setPos(x,y);
+    highlighted.setPos(x,y);
+    pressed.setPos(x,y);
 }
 
 bool Button::handleEvent(SDL_Event* e){
@@ -32,17 +55,17 @@ bool Button::handleEvent(SDL_Event* e){
             inside = false;
 
         if(!inside)
-            state = unpressed;
+            state = UNPRESSED;
         else{
             switch(e->type){
                 case SDL_MOUSEBUTTONDOWN:
-                    state = pressed;
+                    state = PRESSED;
                     break;
                 case SDL_MOUSEMOTION:
-                    state = highlighted;
+                    state = HIGHLIGHTED;
                     break;
                 case SDL_MOUSEBUTTONUP:
-                    state = highlighted;
+                    state = HIGHLIGHTED;
                     return true;
                     break;
             }
