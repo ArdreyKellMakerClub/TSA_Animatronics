@@ -31,7 +31,6 @@ int TexWrap::load(string path, SDL_Renderer* ren){
         SDL_FreeSurface( temp );
     }
     texture = tempTex;
-
     return 1;
 }
 
