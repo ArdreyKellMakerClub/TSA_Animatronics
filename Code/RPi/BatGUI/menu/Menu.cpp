@@ -51,6 +51,7 @@ void Menu::renderEcho(SDL_Renderer* ren){
 }
 void Menu::renderPollen(SDL_Renderer* ren){
     banana.render(ren);
+    cout<<
     mango.render(ren);
     guava.render(ren);
     goBack.TexWrap::render(ren);
@@ -245,6 +246,8 @@ void Menu::loadStart(SDL_Renderer*ren){
     start.TexWrap::setPos(SCREEN_WIDTH/2-start.TexWrap::getWidth()/2, SCREEN_HEIGHT/2-start.TexWrap::getHeight()/2);
 }
 void Menu::loadMain(SDL_Renderer*ren){
+
+
     echo = Button();
     echo.TexWrap::load("assets/images/echolocation/echolocation_unpressed.bmp", ren);
     echo.TexWrap::setPos(SCREEN_WIDTH/4-echo.TexWrap::getWidth()/2,\
