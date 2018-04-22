@@ -58,7 +58,7 @@ int main(){
         }
 
         SDL_RenderClear( ren );
-        testMenu.render(ren, fps, cap);
+        testMenu.render(ren);
 
         SDL_RenderPresent(ren);
         ++frame;

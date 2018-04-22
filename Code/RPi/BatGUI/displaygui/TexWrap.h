@@ -12,6 +12,8 @@ class TexWrap
 
         int getWidth();
         int getHeight();
+        int getX();
+        int getY();
 
         void free();
         void render(SDL_Renderer*);

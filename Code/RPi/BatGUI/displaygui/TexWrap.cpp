@@ -103,3 +103,11 @@ void TexWrap::setPos(int x, int y){
     position.y=y;
 }
 
+int TexWrap::getX(){
+    return position.x;
+}
+
+int TexWrap::getY(){
+    return position.y;
+}
+

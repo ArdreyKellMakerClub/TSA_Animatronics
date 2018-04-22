@@ -15,7 +15,7 @@ using namespace std;
 
 const double PI = 3.14159265;
 
-enum states {START, MAIN, ECHO, POLLEN, FLIGHT, TEST, QUIT};
+enum states {START, MAIN, ECHO, POLLEN, FLIGHT, QUIT};
 
 
 class Menu
@@ -31,7 +31,6 @@ class Menu
             void handleEchoEvent(SDL_Event*);
             void handlePollenEvent(SDL_Event*);
             void handleFlightEvent(SDL_Event*);
-            void handleTestEvent(SDL_Event*);
 
         void load(SDL_Renderer*);
             void loadStart(SDL_Renderer*);
@@ -39,15 +38,14 @@ class Menu
             void loadEcho(SDL_Renderer*);
             void loadPollen(SDL_Renderer*);
             void loadFlight(SDL_Renderer*);
-            void loadTest(SDL_Renderer*);
 
-        void render(SDL_Renderer*, FramerateCapper, FramerateCapper);
+        void render(SDL_Renderer*);
             void renderStart(SDL_Renderer*);
             void renderMain(SDL_Renderer*);
             void renderEcho(SDL_Renderer*);
             void renderPollen(SDL_Renderer*);
             void renderFlight(SDL_Renderer*);
-            void renderTest(SDL_Renderer*, FramerateCapper, FramerateCapper);
+
         bool quitFlag();
     protected:
         TTF_Font* font;
@@ -62,21 +60,30 @@ class Menu
         TexWrap echoIco, pollenIco, flightIco;
         Mix_Chunk* intro;
 
-        //info
+        //echo
         Button goBack;
         TexWrap diagram;
-        TexWrap bat;
+        Mix_Chunk* echo1, *echo2, *echoErr, *echoSucc1, *echoSucc2;
+        Mix_Chunk* one, *two, *three, *four, *five, *six, *seven, *eight,  \
+                   *nine, *ten, *eleven, *twelve, *thirteen, *fourteen,    \
+                   *fifteen, *sixteen, *seventeen, *eighteen, *nineteen,   \
+                   *twenty, *thirty, *fourty, *fifty, *sixty, *seventy,    \
+                   *eighty, *ninety, *hundred;
+
+        //pollen
         TexWrap banana, mango, guava;
         Mix_Chunk* pollenNarr;
-        Mix_Chunk* flightNarr;
-        Mix_Chunk* echoNarr;
+
+        //flight
+        TexWrap bat;
+        Mix_Chunk* flap1, *flap2, *flap3, *flap4;
+
         Mix_Chunk* backNarr;
 
-        //test
-        Button button, buttonTest;
-        TexWrap fpsText, frameText, buttonText;
+        //debug
+        TexWrap frameText;
         TexWrap background;
-        Mix_Chunk* youSuffer;
+        Mix_Chunk* batman;
         bool debug = false;
         long long frame = 0;
     private:

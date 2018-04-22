@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
-	<ActiveTarget name="Debug" />
+	<ActiveTarget name="Release" />
+	<File name="displaygui/FramerateCapper.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="75" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="menu/Menu.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2045" topLine="54" />
+		</Cursor>
+	</File>
+	<File name="displaygui/InitDisplay.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1435" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="displaygui/Button.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="693" topLine="12" />
@@ -11,39 +26,14 @@
 			<Cursor1 position="136" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="displaygui/InitDisplay.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1435" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="displaygui/Button.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="344" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="GUI.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+	<File name="GUI.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1626" topLine="2" />
-		</Cursor>
-	</File>
-	<File name="displaygui/TexWrap.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="447" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="displaygui/FramerateCapper.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="137" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="displaygui/FramerateCapper.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="75" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="displaygui/TexWrap.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="434" topLine="0" />
+			<Cursor1 position="1345" topLine="31" />
 		</Cursor>
 	</File>
 	<File name="displaygui/LoadTexture.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -51,49 +41,35 @@
 			<Cursor1 position="486" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="menu/Menu.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="displaygui/LoadMedia.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1652" topLine="9" />
+			<Cursor1 position="498" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="menu/Menu.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="menu/Menu.cpp" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1123" topLine="5" />
+			<Cursor1 position="4174" topLine="105" />
 		</Cursor>
 		<Folding>
-			<Collapse line="13" />
+			<Collapse line="14" />
+			<Collapse line="32" />
 			<Collapse line="35" />
-			<Collapse line="38" />
-			<Collapse line="47" />
-			<Collapse line="57" />
-			<Collapse line="67" />
-			<Collapse line="71" />
-			<Collapse line="124" />
-			<Collapse line="125" />
-			<Collapse line="146" />
-			<Collapse line="147" />
-			<Collapse line="152" />
-			<Collapse line="171" />
-			<Collapse line="172" />
-			<Collapse line="179" />
-			<Collapse line="180" />
-			<Collapse line="185" />
-			<Collapse line="186" />
-			<Collapse line="191" />
-			<Collapse line="202" />
-			<Collapse line="206" />
-			<Collapse line="242" />
-			<Collapse line="247" />
-			<Collapse line="285" />
-			<Collapse line="296" />
-			<Collapse line="318" />
-			<Collapse line="324" />
-			<Collapse line="346" />
+			<Collapse line="49" />
 		</Folding>
 	</File>
-	<File name="displaygui/LoadMedia.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="displaygui/FramerateCapper.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="499" topLine="0" />
+			<Cursor1 position="137" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="displaygui/TexWrap.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="447" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="displaygui/TexWrap.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="434" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
