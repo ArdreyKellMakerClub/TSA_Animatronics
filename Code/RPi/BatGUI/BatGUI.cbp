@@ -67,6 +67,7 @@
 		<Unit filename="displaygui/displaygui.h" />
 		<Unit filename="menu/Menu.cpp" />
 		<Unit filename="menu/Menu.h" />
+		<Unit filename="serial/serial.cpp" />
 		<Unit filename="serial/serial.h" />
 		<Extensions>
 			<code_completion />

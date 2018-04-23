@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1524452723 source:/home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/Serial/serial/serial.cpp
+	"serial.h"
+	<chrono>
+	<thread>
+
+1524450957 /home/charles/Documents/git-repos/TSA_Animatronics/Code/RPi/Serial/serial/serial.h
+	<SerialStream.h>
+	<stdio.h>
+	<iostream>
+
